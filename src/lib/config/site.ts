@@ -6,6 +6,11 @@ export const siteConfig = {
     links: {
         github: "https://github.com/errata-ai/vale",
         twitter: "https://twitter.com/jdkato",
+        jdkato: "https://github.com/jdkato",
+        youtube: "https://www.youtube.com/@valecli",
+        releases: "https://github.com/errata-ai/vale/releases",
+        docker: "https://hub.docker.com/r/jdkato/vale",
+        contributors: "https://github.com/errata-ai/vale/graphs/contributors"
     },
     keywords: `linting,nlp,cli`,
 };
