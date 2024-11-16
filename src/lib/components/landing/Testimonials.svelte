@@ -17,7 +17,7 @@
 	});
 </script>
 
-<div class="py-12">
+<div class="py-4">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl sm:text-center">
 			<h2 class="text-base/7 font-semibold text-indigo-600">Used around the world</h2>
