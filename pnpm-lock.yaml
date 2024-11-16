@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^10.4.20
     version: 10.4.20(postcss@8.4.49)
   bits-ui:
-    specifier: 1.0.0-next.57
-    version: 1.0.0-next.57(svelte@5.1.16)
+    specifier: 1.0.0-next.58
+    version: 1.0.0-next.58(svelte@5.1.16)
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
@@ -1119,8 +1119,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /bits-ui@1.0.0-next.57(svelte@5.1.16):
-    resolution: {integrity: sha512-meXdwUM/fQv5bq6OgZCtGLAZjhBS1adVOu8rty5gLZ71bIbnK8/VHLX8FVSzIP99d0BglybxD7eAyjnZoelZJg==}
+  /bits-ui@1.0.0-next.58(svelte@5.1.16):
+    resolution: {integrity: sha512-vxl6x/hmmEk32E9Y9ctVY3g7Svei1+6UqSNahYt6deDSa7Q4eKQ+f3CPSWdP2mTdYK3oWsdvlJkD+Tar+KZIiw==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0-next.1
