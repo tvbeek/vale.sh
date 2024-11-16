@@ -1,7 +1,19 @@
 <script lang="ts">
 	import { mode } from 'mode-watcher';
+	import { userConfigs, type UserConfig } from '$lib/config/users';
+	import { onMount } from 'svelte';
+	import * as Popover from '$lib/components/ui/popover';
+	import { shuffleArray } from '$lib/utils';
 
-	let cardColor = $mode == 'dark' ? 'bg-white/5' : 'bg-gray-400/5';
+	let cardColor = '';
+	let users: UserConfig[] = [];
+
+	onMount(() => {
+		users = shuffleArray(userConfigs);
+		mode.subscribe((value) => {
+			cardColor = value == 'dark' ? 'bg-gray-300' : 'bg-gray-100';
+		});
+	});
 </script>
 
 <div class="py-12">
@@ -22,60 +34,17 @@
 		<div
 			class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3"
 		>
-			<div class="{cardColor} p-8 sm:p-10">
-				<img
-					class="max-h-12 w-full object-contain"
-					src="/users/Amazon Web Services.png"
-					alt="Transistor"
-					width="158"
-					height="48"
-				/>
-			</div>
-			<div class="bg-white/5 p-6 sm:p-10">
-				<img
-					class="max-h-12 w-full object-contain"
-					src="https://tailwindui.com/plus/img/logos/158x48/reform-logo-white.svg"
-					alt="Reform"
-					width="158"
-					height="48"
-				/>
-			</div>
-			<div class="bg-white/5 p-6 sm:p-10">
-				<img
-					class="max-h-12 w-full object-contain"
-					src="https://tailwindui.com/plus/img/logos/158x48/tuple-logo-white.svg"
-					alt="Tuple"
-					width="158"
-					height="48"
-				/>
-			</div>
-			<div class="bg-white/5 p-6 sm:p-10">
-				<img
-					class="max-h-12 w-full object-contain"
-					src="https://tailwindui.com/plus/img/logos/158x48/laravel-logo-white.svg"
-					alt="Laravel"
-					width="158"
-					height="48"
-				/>
-			</div>
-			<div class="bg-white/5 p-6 sm:p-10">
-				<img
-					class="max-h-12 w-full object-contain"
-					src="https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-white.svg"
-					alt="SavvyCal"
-					width="158"
-					height="48"
-				/>
-			</div>
-			<div class="bg-white/5 p-6 sm:p-10">
-				<img
-					class="max-h-12 w-full object-contain"
-					src="https://tailwindui.com/plus/img/logos/158x48/statamic-logo-white.svg"
-					alt="Statamic"
-					width="158"
-					height="48"
-				/>
-			</div>
+			{#each users as user}
+				<div class="{cardColor} p-6 sm:p-10">
+					<img
+						class="max-h-12 w-full object-contain"
+						src="/users/{user.name}.svg"
+						alt={user.name}
+						width="158"
+						height="48"
+					/>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
