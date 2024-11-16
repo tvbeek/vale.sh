@@ -11,7 +11,7 @@
 	onMount(() => {
 		users = shuffleArray(userConfigs);
 		mode.subscribe((value) => {
-			cardColor = value == 'dark' ? 'bg-gray-300' : 'bg-gray-100';
+			cardColor = value == 'dark' ? ' bg-gray-400' : 'bg-gray-100';
 		});
 	});
 </script>

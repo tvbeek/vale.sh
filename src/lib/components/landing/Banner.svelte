@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { siteConfig } from '$lib/config/site.js';
+	import { mode } from 'mode-watcher';
+	import { onMount } from 'svelte';
+
+	let cardColor = '';
+	onMount(() => {
+		mode.subscribe((value) => {
+			cardColor = value == 'dark' ? 'bg-gray-400' : 'bg-gray-100';
+		});
+	});
 </script>
 
 <div>
@@ -26,26 +35,26 @@
 		<dl
 			class="grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4"
 		>
-			<div class="flex flex-col bg-gray-400/5 p-8">
-				<dt class="text-sm/6 font-semibold text-gray-600 underline">
+			<div class="flex flex-col {cardColor} p-8 text-gray-800">
+				<dt class="text-sm/6 font-semibold underline">
 					<a href={siteConfig.links.github}>Stars on GitHub</a>
 				</dt>
 				<dd class="order-first text-3xl font-semibold tracking-tight">4.5K+</dd>
 			</div>
-			<div class="flex flex-col bg-gray-400/5 p-8">
-				<dt class="text-sm/6 font-semibold text-gray-600 underline">
+			<div class="flex flex-col {cardColor} p-8 text-gray-800">
+				<dt class="text-sm/6 font-semibold underline">
 					<a href={siteConfig.links.releases}>Downloads</a>
 				</dt>
 				<dd class="order-first text-3xl font-semibold tracking-tight">3M+</dd>
 			</div>
-			<div class="flex flex-col bg-gray-400/5 p-8">
-				<dt class="text-sm/6 font-semibold text-gray-600 underline">
+			<div class="flex flex-col {cardColor} p-8 text-gray-800">
+				<dt class="text-sm/6 font-semibold underline">
 					<a href={siteConfig.links.docker}>Docker pulls</a>
 				</dt>
 				<dd class="order-first text-3xl font-semibold tracking-tight">1.5M+</dd>
 			</div>
-			<div class="flex flex-col bg-gray-400/5 p-8">
-				<dt class="text-sm/6 font-semibold text-gray-600 underline underline">
+			<div class="flex flex-col {cardColor} p-8 text-gray-800">
+				<dt class="text-sm/6 font-semibold underline underline">
 					<a href={siteConfig.links.contributors}>Contributors</a>
 				</dt>
 				<dd class="order-first text-3xl font-semibold tracking-tight">40+</dd>
