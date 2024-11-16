@@ -15,11 +15,13 @@
 <div>
 	<div class="px-6 py-14 sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="text-base/7 font-semibold text-indigo-600">Vale CLI</h2>
 			<h2 class="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
 				Your style, our editor
 			</h2>
-			<p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8">
-				Vale is an open-source, command-line tool that brings your editorial style guide to life.
+			<p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-neutral-400">
+				Vale is an open-source, command-line tool that brings your editorial style guide to life by
+				allowing to enforce custom writing standards.
 			</p>
 			<div class="mt-10 flex items-center justify-center gap-x-6">
 				<Button variant="outline">Get Started</Button>
