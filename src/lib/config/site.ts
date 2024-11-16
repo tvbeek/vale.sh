@@ -10,7 +10,10 @@ export const siteConfig = {
         youtube: "https://www.youtube.com/@valecli",
         releases: "https://github.com/errata-ai/vale/releases",
         docker: "https://hub.docker.com/r/jdkato/vale",
-        contributors: "https://github.com/errata-ai/vale/graphs/contributors"
+        contributors: "https://github.com/errata-ai/vale/graphs/contributors",
+        sponsors: "https://github.com/sponsors/jdkato",
+        openCollective: "https://opencollective.com/vale"
+
     },
     keywords: `linting,nlp,cli`,
 };
