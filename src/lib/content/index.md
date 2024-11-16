@@ -1,8 +1,11 @@
+---
+title: Introduction
+description: Learn about what Vale is (and isn't).
+---
+
 <script lang="ts">
 	import TechStack from '$lib/components/TechStack.svelte';
 </script>
-
-## What is (and isn't) Vale?
 
 When you think about software built for automated writing assistance, a lot
 of assumptions probably come to mind. You've heard terms like "cloud-based,"

@@ -8,10 +8,6 @@ type DocsConfig = {
 export const docsConfig: DocsConfig = {
     mainNav: [
         {
-            title: "About",
-            href: "/about",
-        },
-        {
             title: "Docs",
             href: "/docs",
         },
@@ -43,18 +39,8 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "components.json",
-                    href: "/docs/components-json",
-                    items: [],
-                },
-                {
-                    title: "Theming",
-                    href: "/docs/theming",
-                    items: [],
-                },
-                {
-                    title: "Dark mode",
-                    href: "/docs/dark-mode",
+                    title: ".vale.ini",
+                    href: "/docs/vale-ini",
                     items: [],
                 },
                 {
@@ -63,272 +49,255 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "Typography",
-                    href: "/docs/typography",
+                    title: "Styles",
+                    href: "/docs/styles",
                     items: [],
                 },
                 {
-                    title: "Figma",
-                    href: "/docs/figma",
+                    title: "Scopes",
+                    href: "/docs/scopes",
                     items: [],
                 },
                 {
-                    title: "Changelog",
-                    href: "/docs/changelog",
+                    title: "Vocabularies",
+                    href: "/docs/vocabularies",
                     items: [],
                 },
                 {
-                    title: "About",
-                    href: "/docs/about",
+                    title: "Packages",
+                    href: "/docs/packages",
+                    items: [],
+                },
+                {
+                    title: "Filters",
+                    href: "/docs/filters",
+                    items: [],
+                },
+                {
+                    title: "Templates",
+                    href: "/docs/templates",
+                    items: [],
+                },
+                {
+                    title: "FAQ",
+                    href: "/docs/faq",
+                    items: [],
+                },
+                {
+                    title: "Glossary",
+                    href: "/docs/glossary",
+                    items: [
+                        {
+                            title: "Component",
+                            href: "/docs/glossary#component",
+                            items: [],
+                        }
+                    ],
+                },
+            ],
+        },
+        {
+            title: "Rules",
+            items: [
+                {
+                    title: "existence",
+                    href: "/docs/ext/existence",
+                    items: [],
+                },
+                {
+                    title: "substition",
+                    href: "/docs/ext/substitution",
+                    items: [],
+                },
+                {
+                    title: "occurrence",
+                    href: "/docs/ext/occurrence",
+                    items: [],
+                },
+                {
+                    title: "repetition",
+                    href: "/docs/ext/repetition",
+                    items: [],
+                },
+                {
+                    title: "consistency",
+                    href: "/docs/ext/consistency",
+                    items: [],
+                },
+                {
+                    title: "conditional",
+                    href: "/docs/ext/conditional",
+                    items: [],
+                },
+                {
+                    title: "capitalization",
+                    href: "/docs/ext/capitalization",
+                    items: [],
+                },
+                {
+                    title: "metric",
+                    href: "/docs/ext/metric",
+                    items: [],
+                },
+                {
+                    title: "spelling",
+                    href: "/docs/ext/spelling",
+                    items: [],
+                },
+                {
+                    title: "sequence",
+                    href: "/docs/ext/sequence",
+                    items: [],
+                },
+                {
+                    title: "script",
+                    href: "/docs/ext/script",
                     items: [],
                 },
             ],
         },
         {
-            title: "Components",
+            title: "Formats",
             items: [
                 {
-                    title: "Accordion",
-                    href: "/docs/components/accordion",
+                    title: "Markdown",
+                    href: "/docs/formats/markdown",
                     items: [],
                 },
                 {
-                    title: "Alert",
-                    href: "/docs/components/alert",
+                    title: "AsciiDoc",
+                    href: "/docs/formats/asciidoc",
                     items: [],
                 },
                 {
-                    title: "Alert Dialog",
-                    href: "/docs/components/alert-dialog",
+                    title: "HTML",
+                    href: "/docs/formats/html",
                     items: [],
                 },
                 {
-                    title: "Aspect Ratio",
-                    href: "/docs/components/aspect-ratio",
+                    title: "reStructuredText",
+                    href: "/docs/formats/rst",
                     items: [],
                 },
                 {
-                    title: "Avatar",
-                    href: "/docs/components/avatar",
+                    title: "XML",
+                    href: "/docs/formats/xml",
                     items: [],
                 },
                 {
-                    title: "Badge",
-                    href: "/docs/components/badge",
+                    title: "Org",
+                    href: "/docs/formats/org",
                     items: [],
                 },
                 {
-                    title: "Breadcrumb",
-                    href: "/docs/components/breadcrumb",
+                    title: "DITA",
+                    href: "/docs/formats/dita",
                     items: [],
                 },
                 {
-                    title: "Button",
-                    href: "/docs/components/button",
+                    title: "code",
+                    href: "/docs/formats/code",
+                    items: [],
+                },
+            ],
+        },
+        {
+            title: "Intergrations",
+            items: [
+                {
+                    title: "CircleCI",
+                    href: "https://circleci.com/developer/orbs/orb/circleci/vale",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Calendar",
-                    href: "/docs/components/calendar",
+                    title: "Emacs",
+                    href: "https://github.com/tpeacock19/flymake-vale",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Card",
-                    href: "/docs/components/card",
+                    title: "GitHub Actions",
+                    href: "https://github.com/errata-ai/vale-action",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Carousel",
-                    href: "/docs/components/carousel",
+                    title: "Git Hooks",
+                    href: "https://pre-commit.com",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Checkbox",
-                    href: "/docs/components/checkbox",
+                    title: "JetBrains",
+                    href: "/docs/apps/jetbrains",
                     items: [],
                 },
                 {
-                    title: "Collapsible",
-                    href: "/docs/components/collapsible",
+                    title: "Laravel",
+                    href: "https://github.com/beyondcode/laravel-prose-linter",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Combobox",
-                    href: "/docs/components/combobox",
+                    title: "Obsidian",
+                    href: "https://github.com/marcusolsson/obsidian-vale",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Command",
-                    href: "/docs/components/command",
+                    title: "Oxygen XML",
+                    href: "https://www.oxygenxml.com/doc/versions/23.1/ug-editor/topics/vale-linter-addon.html",
                     items: [],
                 },
                 {
-                    title: "Context Menu",
-                    href: "/docs/components/context-menu",
+                    title: "Sublime Text",
+                    href: "https://packagecontrol.io/packages/LSP-vale-ls",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Data Table",
-                    href: "/docs/components/data-table",
+                    title: "Vim/Neovim",
+                    href: "https://github.com/dense-analysis/ale",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Date Picker",
-                    href: "/docs/components/date-picker",
+                    title: "VS Code",
+                    href: "https://github.com/chrischinchilla/vale-vscode",
+                    external: true,
                     items: [],
                 },
                 {
-                    title: "Dialog",
-                    href: "/docs/components/dialog",
+                    title: "Zed",
+                    href: "https://github.com/koozz/zed-vale",
+                    external: true,
+                    items: [],
+                },
+            ],
+        },
+        {
+            title: "Guides",
+            items: [
+                {
+                    title: "CI/CD",
+                    href: "/docs/guides/ci-cd",
                     items: [],
                 },
                 {
-                    title: "Drawer",
-                    href: "/docs/components/drawer",
+                    title: "LSP",
+                    href: "/docs/guides/lsp",
                     items: [],
                 },
                 {
-                    title: "Dropdown Menu",
-                    href: "/docs/components/dropdown-menu",
+                    title: "Regex",
+                    href: "/docs/guides/regex",
                     items: [],
                 },
                 {
-                    title: "Form",
-                    href: "/docs/components/form",
-                    items: [],
-                },
-                {
-                    title: "Hover Card",
-                    href: "/docs/components/hover-card",
-                    items: [],
-                },
-                {
-                    title: "Input",
-                    href: "/docs/components/input",
-                    items: [],
-                },
-                {
-                    title: "Label",
-                    href: "/docs/components/label",
-                    items: [],
-                },
-                {
-                    title: "Menubar",
-                    href: "/docs/components/menubar",
-                    items: [],
-                },
-                // {
-                //   title: "Navigation Menu",
-                //   href: "#",
-                //   label: "Soon",
-                //   disabled: true,
-                //   items: []
-                // },
-                {
-                    title: "Pagination",
-                    href: "/docs/components/pagination",
-                    items: [],
-                },
-                {
-                    title: "Popover",
-                    href: "/docs/components/popover",
-                    items: [],
-                },
-                {
-                    title: "Progress",
-                    href: "/docs/components/progress",
-                    items: [],
-                },
-                {
-                    title: "Radio Group",
-                    href: "/docs/components/radio-group",
-                    items: [],
-                },
-                {
-                    title: "Range Calendar",
-                    href: "/docs/components/range-calendar",
-                    items: [],
-                },
-                {
-                    title: "Resizable",
-                    href: "/docs/components/resizable",
-                    items: [],
-                },
-                {
-                    title: "Scroll Area",
-                    href: "/docs/components/scroll-area",
-                    items: [],
-                },
-                {
-                    title: "Select",
-                    href: "/docs/components/select",
-                    items: [],
-                },
-                {
-                    title: "Separator",
-                    href: "/docs/components/separator",
-                    items: [],
-                },
-                {
-                    title: "Sheet",
-                    href: "/docs/components/sheet",
-                    items: [],
-                },
-                {
-                    title: "Skeleton",
-                    href: "/docs/components/skeleton",
-                    items: [],
-                },
-                {
-                    title: "Slider",
-                    href: "/docs/components/slider",
-                    items: [],
-                },
-                {
-                    title: "Sonner",
-                    href: "/docs/components/sonner",
-                    items: [],
-                },
-                {
-                    title: "Switch",
-                    href: "/docs/components/switch",
-                    items: [],
-                },
-                {
-                    title: "Table",
-                    href: "/docs/components/table",
-                    items: [],
-                },
-                {
-                    title: "Tabs",
-                    href: "/docs/components/tabs",
-                    items: [],
-                },
-                {
-                    title: "Textarea",
-                    href: "/docs/components/textarea",
-                    items: [],
-                },
-                // {
-                //   title: "Toast",
-                //   href: "#",
-                //   label: "Soon",
-                //   disabled: true,
-                //   items: []
-                // },
-                {
-                    title: "Toggle",
-                    href: "/docs/components/toggle",
-                    items: [],
-                },
-                {
-                    title: "Toggle Group",
-                    href: "/docs/components/toggle-group",
-                    items: [],
-                },
-                {
-                    title: "Tooltip",
-                    href: "/docs/components/tooltip",
+                    title: "Contributing",
+                    href: "/docs/guides/contributing",
+                    external: true,
                     items: [],
                 },
             ],
@@ -342,45 +311,4 @@ type Example = {
     label?: string;
     code: string;
 };
-export const examples: Example[] = [
-    {
-        name: "Mail",
-        href: "/examples/mail",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/mail",
-    },
-    {
-        name: "Dashboard",
-        href: "/examples/dashboard",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/dashboard",
-    },
-    {
-        name: "Cards",
-        href: "/examples/cards",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/cards",
-    },
-    {
-        name: "Tasks",
-        href: "/examples/tasks",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/tasks",
-    },
-    {
-        name: "Playground",
-        href: "/examples/playground",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/playground",
-    },
-    {
-        name: "Forms",
-        href: "/examples/forms",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/forms",
-    },
-    {
-        name: "Music",
-        href: "/examples/music",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/music",
-    },
-    {
-        name: "Authentication",
-        href: "/examples/authentication",
-        code: "https://github.com/huntabyte/shadcn-svelte/tree/main/sites/docs/src/routes/(app)/examples/authentication",
-    },
-];
+export const examples: Example[] = [];
