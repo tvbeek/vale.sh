@@ -1,10 +1,12 @@
 <script lang="ts">
-	import Intro from './intro.md';
+	import { cn } from '$lib/utils.js';
+	import About from '$lib/content/about.md';
 </script>
 
-<h2 class="mt-4 text-pretty text-2xl font-semibold tracking-tight sm:text-3xl">
-	What is (and isn't) Vale?
-</h2>
-<div class="mt-6 text-lg/8">
-	<Intro />
-</div>
+<main class="relative">
+	<div class="mx-auto w-full min-w-0">
+		<div class="markdown mb-12">
+			<About />
+		</div>
+	</div>
+</main>
