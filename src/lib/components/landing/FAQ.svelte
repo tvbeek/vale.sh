@@ -16,7 +16,7 @@
 	<div class="flex flex-row py-6 sm:items-center sm:justify-center">
 		<ul
 			role="list"
-			class="grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-white sm:grid-cols-2 md:grid-cols-3"
+			class="grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 sm:grid-cols-2 md:grid-cols-3"
 		>
 			<li class="flex gap-x-3">
 				<svg

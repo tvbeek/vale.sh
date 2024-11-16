@@ -8,7 +8,7 @@
 		<h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
 			Introducing Vale CLI
 		</h1>
-		<div class="mt-6 text-lg/8">
+		<div class="mt-12 text-lg/8">
 			{@render children()}
 		</div>
 	</div>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
 	import About from '$lib/content/about.md';
 </script>
 
