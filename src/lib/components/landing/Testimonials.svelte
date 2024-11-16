@@ -70,7 +70,7 @@
 						? 'bg-gray-400/5'
 						: 'bg-gray-50'} px-4 py-1.5 text-sm/6 ring-1 ring-inset ring-gray-900/5"
 				>
-					<a href="#" class="font-semibold text-indigo-600"
+					<a href="/about" class="font-semibold text-indigo-600"
 						><span class="absolute inset-0" aria-hidden="true"></span> Learn more about how Vale is
 						being used
 						<span aria-hidden="true">&rarr;</span></a

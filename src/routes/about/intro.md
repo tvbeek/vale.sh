@@ -1,0 +1,1 @@
+When you think about software built for automated writing assistance, a lot of assumptions probably come to mind. You’ve heard terms like “cloud-based,” “artificial intelligence,” and “machine learning.” You’ve been promised “sophisticated,” human-like feedback to dramatically improve your writing.
