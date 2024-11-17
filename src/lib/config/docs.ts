@@ -109,7 +109,7 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "substition",
+                    title: "substitution",
                     href: "/docs/ext/substitution",
                     items: [],
                 },
@@ -156,6 +156,31 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "script",
                     href: "/docs/ext/script",
+                    items: [],
+                },
+            ],
+        },
+        {
+            title: "Actions",
+            items: [
+                {
+                    title: "suggest",
+                    href: "/docs/actions/suggest",
+                    items: [],
+                },
+                {
+                    title: "replace",
+                    href: "/docs/actions/replace",
+                    items: [],
+                },
+                {
+                    title: "remove",
+                    href: "/docs/actions/remove",
+                    items: [],
+                },
+                {
+                    title: "edit",
+                    href: "/docs/actions/edit",
                     items: [],
                 },
             ],
