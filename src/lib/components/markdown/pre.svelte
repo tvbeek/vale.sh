@@ -14,11 +14,6 @@
 		});
 	}
 
-	interface Props {
-		className: string | undefined | null;
-		children: Snippet;
-	}
-
 	let { className, children }: { className: string | undefined | null; children: Snippet } =
 		$props();
 </script>

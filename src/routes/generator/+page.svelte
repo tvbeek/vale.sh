@@ -1,14 +1,21 @@
 <script lang="ts">
-	import SuperDebug, { type Infer, type SuperValidated, superForm } from 'sveltekit-superforms';
+	import CopyButton from '$lib/components/CopyButton.svelte';
+	import { tick } from 'svelte';
+	import { cn, createCopyCodeButton, copyStringToClipboard } from '$lib/utils.js';
 	import * as Card from '$lib/components/ui/card';
 	import * as Select from '$lib/components/ui/select';
 	import { Label } from '$lib/components/ui/label';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import CodeMirror from 'svelte-codemirror-editor';
-	import { properties } from '@codemirror/legacy-modes/mode/properties';
-	import { StreamLanguage, LanguageSupport } from '@codemirror/language';
+	import TextEditor from '$lib/components/TextEditor.svelte';
 
-	const propertiesLanguage = new LanguageSupport(StreamLanguage.define(properties));
+	const { copied, copyCode, codeString, setCodeString } = createCopyCodeButton();
+
+	function handleCopy() {
+		tick().then(() => {
+			copyCode();
+			copyStringToClipboard(value);
+		});
+	}
 
 	const configs = [
 		{
@@ -67,7 +74,12 @@
 	let selectedStyles = $state(['']);
 	let selectedConfigs = $state(['']);
 
-	let value = '';
+	let value = `StylesPath = styles
+
+MinAlertLevel = suggestion
+
+[*]
+BasedOnStyles = Vale`;
 </script>
 
 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
@@ -83,6 +95,10 @@
 				<div class="grid w-full items-center gap-4">
 					<div class="flex flex-col space-y-1.5">
 						<Label for="base">Base style</Label>
+						<p class="text-xs text-muted-foreground">
+							A 'base' style is a comprehensive style guide that serves as a starting point for an
+							in-house style. You generally should only use one at a time.
+						</p>
 						<Select.Root type="single" bind:value={baseStyle}>
 							<Select.Trigger id="base">
 								{baseLabel}
@@ -96,8 +112,12 @@
 					</div>
 					<div class="grid grid-cols-1 gap-4">
 						<div class="flex flex-col space-y-1.5">
-							<div class="mb-2">
+							<div>
 								<Label for="supplementary">Supplementary styles</Label>
+								<p class="text-xs text-muted-foreground">
+									A 'supplementary' style is a smaller, more specific style that can be used
+									alongside a base style.
+								</p>
 							</div>
 							<div class="space-y-2">
 								{#each supplementaryStyles as item, i}
@@ -126,8 +146,12 @@
 							</div>
 						</div>
 						<div class="flex flex-col space-y-1.5">
-							<div class="mb-2">
+							<div>
 								<Label for="supplementary">Configurations</Label>
+								<p class="text-xs text-muted-foreground">
+									These are format- and library-specific configurations for Vale (typically handling
+									details like non-standard markup).
+								</p>
 							</div>
 							<div class="space-y-2">
 								{#each configs as item, i}
@@ -160,9 +184,22 @@
 			</form>
 		</Card.Content>
 		<Card.Footer class="w-100 border-t-2 border-solid p-0">
-			<div class="w-full">
-				<CodeMirror bind:value lang={propertiesLanguage} />
+			<div class="relative w-full">
+				<TextEditor bind:value mode="ini" readonly={true} />
+				<CopyButton
+					copied={$copied}
+					copyCode={handleCopy}
+					className={cn('pre-copy-btn absolute right-4 top-4')}
+				/>
 			</div>
 		</Card.Footer>
 	</Card.Root>
+	<div class="pt-2 text-sm text-muted-foreground">
+		<p>
+			<b>Tip</b>: After creating your <code>.vale.ini</code> file using the above config, run
+			<code>vale sync</code> from the command line to initialize it. Check out the
+			<a class="underline" href="/hub">Package Hub</a> for more information on the available styles and
+			configurations.
+		</p>
+	</div>
 </div>

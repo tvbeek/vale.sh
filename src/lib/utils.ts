@@ -19,6 +19,11 @@ export function shuffleArray<T>(array: T[]): T[] {
     return shuffledArray;
 }
 
+export function copyStringToClipboard(str: string) {
+    if (!isBrowser) return;
+    navigator.clipboard.writeText(str);
+}
+
 export function createCopyCodeButton() {
     const codeString = writable("");
     const copied = writable(false);
