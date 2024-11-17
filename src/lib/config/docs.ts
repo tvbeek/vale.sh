@@ -34,8 +34,8 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "Installation",
-                    href: "/docs/installation",
+                    title: "Install",
+                    href: "/docs/install",
                     items: [],
                 },
                 {
