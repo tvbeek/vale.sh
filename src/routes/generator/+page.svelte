@@ -20,11 +20,31 @@
 		});
 	}
 
+	let commentedHeader = `[*.{md}]
+# ^ This section applies to only Markdown files.
+#
+# You can change (or add) file extensions here
+# to apply these settings to other file types.
+#
+# For example, to apply these settings to both
+# Markdown and reStructuredText:
+#
+# [*.{md,rst}]`;
+
 	let value = $state(`StylesPath = styles
 
 MinAlertLevel = suggestion
 
-[*]
+[*.{md}]
+# ^ This section applies to only Markdown files.
+#
+# You can change (or add) file extensions here
+# to apply these settings to other file types.
+#
+# For example, to apply these settings to both
+# Markdown and reStructuredText:
+#
+# [*.{md,rst}]
 BasedOnStyles = Vale`);
 
 	let baseStyle = $state('');
@@ -70,8 +90,8 @@ BasedOnStyles = Vale`);
 			parser.set(null, 'Packages', pkgs.join(','));
 		}
 
-		parser.set('*', 'BasedOnStyles', styles.join(','));
-		value = clean(parser.stringify());
+		parser.set('*.{md}', 'BasedOnStyles', styles.join(','));
+		value = clean(parser.stringify()).replace('[*.{md}]', commentedHeader);
 	});
 </script>
 
