@@ -13,15 +13,16 @@ export const docsConfig: DocsConfig = {
         },
         {
             title: "Vale Studio",
-            href: "/docs/components/accordion",
-        },
-        {
-            title: "Package Hub",
-            href: "/examples/dashboard",
+            href: "https://studio.vale.sh",
+            external: true,
         },
         {
             title: "Config Generator",
-            href: "/blocks",
+            href: "/generator",
+        },
+        {
+            title: "Package Hub",
+            href: "/hub",
         },
     ],
     sidebarNav: [
