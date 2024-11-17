@@ -23,7 +23,7 @@
 		</p>
 		<div class="mt-10 flex items-center justify-center gap-x-6">
 			<Button variant="outline">Get Started</Button>
-			<a href="/about" class="text-sm/6 font-semibold"
+			<a href="/docs" class="text-sm/6 font-semibold"
 				>Learn more <span aria-hidden="true">→</span></a
 			>
 		</div>

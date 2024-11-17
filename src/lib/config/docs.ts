@@ -84,15 +84,19 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Support ❤️",
+                    href: "/docs/support",
+                    items: [],
+                },
+                {
+                    title: "Social",
+                    href: "/docs/social",
+                    items: [],
+                },
+                {
                     title: "Glossary",
                     href: "/docs/glossary",
-                    items: [
-                        {
-                            title: "Component",
-                            href: "/docs/glossary#component",
-                            items: [],
-                        }
-                    ],
+                    items: [],
                 },
             ],
         },
