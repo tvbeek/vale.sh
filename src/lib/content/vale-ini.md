@@ -59,10 +59,10 @@ format associations, and format-specific settings:
 
 ### Core settings
 
+<CoreSettings />
+
 Core settings appear at the top of the file and apply to the application itself
 rather than a specific file format.
-
-<CoreSettings />
 
 ### Format associations
 
@@ -80,13 +80,17 @@ adding support for a new file type.
 
 ### Format-specific settings
 
-Format-specific sections apply their settings only to files that match their
-associated glob pattern.
-
-For example, `[*]` matches all files while `[*.{md,txt}]` only matches files
-that end with either `.md` or `.txt.`
-
 <FormatSettings />
+
+Format-specific sections apply their settings only to files that match their
+associated glob pattern. For example, `[*]` matches all files while
+`[*.{md,txt}]` only matches files that end with either `.md` or `.txt.`
+
+You can have as many format-specific sections as you’d like and settings
+defined under a more specific section will override those in `[*]`.
+
+See [Globbing](/guide/globbing) for more information on how to use glob
+patterns with Vale.
 
 ## Search process
 
@@ -123,12 +127,6 @@ instead of, any other configuration sources.
 
 In other words, this config file is _always_ loaded and is read after
 any other sources to allow for project-agnostic customization.
-
-## Cascading overrides
-
-Vale's configuration is capable of handling complex multi-format projects.
-
-<Cascade />
 
 [1]: https://github.com/errata-ai/vale-boilerplate
 [2]: https://github.com/errata-ai/Microsoft

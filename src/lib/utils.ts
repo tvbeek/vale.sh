@@ -90,7 +90,7 @@ export async function getDoc(slug: string) {
     const modules = import.meta.glob(`$lib/content/**/*.md`);
     const match = findMatch(slug, modules);
     const doc = await match?.resolver?.();
-    console.log("mods", modules);
+
     if (!doc || !doc.metadata) {
         error(404);
     }

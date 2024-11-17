@@ -393,6 +393,11 @@ export const docsConfig: DocsConfig = {
                     href: "/docs/guides/regex",
                     items: [],
                 },
+                {
+                    title: "Globbing",
+                    href: "/docs/guides/globbing",
+                    items: [],
+                },
             ],
         },
     ],

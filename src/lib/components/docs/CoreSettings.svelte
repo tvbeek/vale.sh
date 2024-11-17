@@ -42,7 +42,6 @@
 </script>
 
 <Table.Root class="mt-4">
-	<Table.Caption>All available core settings</Table.Caption>
 	<Table.Header>
 		<Table.Row>
 			<Table.Head>Name</Table.Head>
