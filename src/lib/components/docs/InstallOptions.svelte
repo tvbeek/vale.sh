@@ -4,20 +4,32 @@
 </script>
 
 {#snippet choco()}
-	<code data-language="bash" data-theme="Lambda Studio — Blackout" style="display: grid;">
-		<span data-line>{`choco install vale`}</span>
+	<code data-language="shell" data-theme="Lambda Studio — Blackout" style="display: grid;">
+		<span data-line>
+			<span style="color:#FFF;font-weight:bold">choco</span>
+			<span style="color:#FFF8"> install</span>
+			<span style="color:#FFF8"> vale</span>
+		</span>
 	</code>
 {/snippet}
 
 {#snippet brew()}
-	<code data-language="bash" data-theme="Lambda Studio — Blackout" style="display: grid;">
-		<span data-line>{`brew install vale`}</span>
+	<code data-language="shell" data-theme="Lambda Studio — Blackout" style="display: grid;">
+		<span data-line>
+			<span style="color:#FFF;font-weight:bold">brew</span>
+			<span style="color:#FFF8"> install</span>
+			<span style="color:#FFF8"> vale</span>
+		</span>
 	</code>
 {/snippet}
 
 {#snippet snap()}
-	<code data-language="bash" data-theme="Lambda Studio — Blackout" style="display: grid;">
-		<span data-line>{`snap install vale`}</span>
+	<code data-language="shell" data-theme="Lambda Studio — Blackout" style="display: grid;">
+		<span data-line>
+			<span style="color:#FFF;font-weight:bold">snap</span>
+			<span style="color:#FFF8"> install</span>
+			<span style="color:#FFF8"> vale</span>
+		</span>
 	</code>
 {/snippet}
 
@@ -27,9 +39,7 @@
 		<Tabs.Trigger value="mac">macOS</Tabs.Trigger>
 		<Tabs.Trigger value="linux">Linux</Tabs.Trigger>
 	</Tabs.List>
-	<Tabs.Content
-		value="win"
-		class="relative mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+	<Tabs.Content value="win"
 		><figure data-rehype-pretty-code-figure class="m-0 p-0">
 			<Pre className="px-4" children={choco} />
 			<figcaption class="text-center text-xs">
@@ -38,9 +48,7 @@
 			</figcaption>
 		</figure></Tabs.Content
 	>
-	<Tabs.Content
-		value="mac"
-		class="relative mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+	<Tabs.Content value="mac"
 		><figure data-rehype-pretty-code-figure>
 			<Pre className="px-4" children={brew} />
 			<figcaption class="text-center text-xs">
@@ -48,9 +56,7 @@
 			</figcaption>
 		</figure>
 	</Tabs.Content>
-	<Tabs.Content
-		value="linux"
-		class="relative mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+	<Tabs.Content value="linux"
 		><figure data-rehype-pretty-code-figure>
 			<Pre className="px-4" children={snap} />
 			<figcaption class="text-center text-xs">
