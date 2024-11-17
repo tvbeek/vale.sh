@@ -324,6 +324,11 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Scripting",
+                    href: "/docs/guides/scripting",
+                    items: [],
+                },
+                {
                     title: "Contributing",
                     href: "/docs/guides/contributing",
                     external: true,

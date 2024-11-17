@@ -2,9 +2,7 @@
 	import { tick } from 'svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import { cn, createCopyCodeButton } from '$lib/utils.js';
-
-	let className: string | undefined | null = undefined;
-	export { className as class };
+	import type { Snippet } from 'svelte';
 
 	const { copied, copyCode, codeString, setCodeString } = createCopyCodeButton();
 
@@ -15,17 +13,24 @@
 			copyCode();
 		});
 	}
+
+	interface Props {
+		className: string | undefined | null;
+		children: Snippet;
+	}
+
+	let { className, children }: { className: string | undefined | null; children: Snippet } =
+		$props();
 </script>
 
 <pre
 	bind:this={preNode}
 	use:setCodeString
 	class={cn(
-		'mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900',
+		'mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950  dark:bg-zinc-900',
 		className
-	)}
-	{...$$restProps}>
-	<slot />
+	)}>
+	{@render children()}
 </pre>
 <CopyButton
 	copied={$copied}
