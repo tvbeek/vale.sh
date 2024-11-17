@@ -395,8 +395,8 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "Contributing",
-                    href: "/docs/guides/contributing",
+                    title: "Local overrides",
+                    href: "/docs/guides/local-overrides",
                     external: true,
                     items: [],
                 },

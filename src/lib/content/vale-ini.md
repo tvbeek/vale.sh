@@ -33,6 +33,8 @@ $ vale README.md
 
 Check out our [sample repository][1] for a complete example of the required components of a Vale configuration.
 
+## File structure
+
 ## Search process
 
 <Alert>
@@ -55,7 +57,7 @@ configuration depends on your operating system:
 
 | OS      | Search Locations                                   |
 | :------ | :------------------------------------------------- |
-| Windows | `%LOCALAPPDATA%\vale\.vale.ini`                    |
+| Windows | `%LOCALAPPDATA%\\vale\\.vale.ini`                  |
 | macOS   | `$HOME/Library/Application Support/vale/.vale.ini` |
 | Unix    | `$XDG_CONFIG_HOME/vale/.vale.ini`                  |
 

@@ -3,7 +3,7 @@
 </script>
 
 <p
-	class="bg-orange-400 py-1.5 text-center text-sm font-medium text-black dark:bg-orange-700 dark:text-white"
+	class="bg-orange-400 py-1.5 text-center text-sm font-medium text-black dark:bg-orange-400 dark:text-white"
 >
 	Help Vale grow by
 	<a

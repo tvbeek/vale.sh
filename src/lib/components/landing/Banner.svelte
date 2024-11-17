@@ -14,7 +14,7 @@
 
 <div class="px-6 py-14 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-2xl sm:text-center">
-		<h2 class="text-base/7 font-semibold text-indigo-600">Vale CLI</h2>
+		<h2 class="text-base/7 font-semibold text-lime-500">Vale CLI</h2>
 		<h2 class="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
 			Your style, our editor
 		</h2>

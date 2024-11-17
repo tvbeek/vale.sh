@@ -4,7 +4,7 @@
 
 <div class="px-6 py-5 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-2xl sm:text-center">
-		<h2 class="text-base/7 font-semibold text-indigo-600">Built for you</h2>
+		<h2 class="text-base/7 font-semibold text-lime-500">Built for you</h2>
 		<h2 class="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
 			Local, private, and secure.
 		</h2>
