@@ -47,7 +47,7 @@ export function createCopyCodeButton() {
 }
 
 export function slugFromPath(path: string) {
-    return path.replace("/content/", "").replace(".md", "");
+    return path.replace("/src/lib/content/", "").replace(".md", "");
 }
 
 function getIndexDocIfExists(slug: string, modules: Modules) {
@@ -85,7 +85,7 @@ export async function getDoc(slug: string) {
     const modules = import.meta.glob(`$lib/content/**/*.md`);
     const match = findMatch(slug, modules);
     const doc = await match?.resolver?.();
-
+    console.log("mods", modules);
     if (!doc || !doc.metadata) {
         error(404);
     }

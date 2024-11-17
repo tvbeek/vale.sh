@@ -19,6 +19,7 @@ export const load: PageLoad = async (event) => {
 export const entries: EntryGenerator = () => {
     console.info("Prerendering /docs");
     const modules = import.meta.glob("$lib/content/**/*.md");
+    console.info("Modules", modules);
     const entries = [];
 
     for (const path of Object.keys(modules)) {
