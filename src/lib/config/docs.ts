@@ -102,6 +102,71 @@ export const docsConfig: DocsConfig = {
             ],
         },
         {
+            title: "Settings",
+            items: [
+                {
+                    title: "StylesPath",
+                    href: "/docs/keys/stylespath",
+                    items: [],
+                },
+                {
+                    title: "Packages",
+                    href: "/docs/keys/packages",
+                    items: [],
+                },
+                {
+                    title: "Vocab",
+                    href: "/docs/keys/vocab",
+                    items: [],
+                },
+                {
+                    title: "MinAlertLevel",
+                    href: "/docs/keys/minalertlevel",
+                    items: [],
+                },
+                {
+                    title: "IgnoredScopes",
+                    href: "/docs/keys/ignoredscopes",
+                    items: [],
+                },
+                {
+                    title: "IgnoredClasses",
+                    href: "/docs/keys/ignoredclasses",
+                    items: [],
+                },
+                {
+                    title: "SkippedScopes",
+                    href: "/docs/keys/skippedscopes",
+                    items: [],
+                },
+                {
+                    title: "BasedOnStyles",
+                    href: "/docs/keys/basedonstyles",
+                    items: [],
+                },
+                {
+                    title: "BlockIgnores",
+                    href: "/docs/keys/blockignores",
+                    items: [],
+                },
+                {
+                    title: "TokenIgnores",
+                    href: "/docs/keys/tokenignores",
+                    items: [],
+                },
+                {
+                    title: "CommentDelimiters",
+                    href: "/docs/keys/commentdelimiters",
+                    items: [],
+                },
+                {
+                    title: "Transform",
+                    href: "/docs/keys/transform",
+                    items: [],
+                },
+            ]
+        },
+        {
             title: "Rules",
             items: [
                 {
