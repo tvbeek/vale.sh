@@ -47,13 +47,13 @@
 			name: 'rule-explorer',
 			tech: 'Svelte',
 			info: 'A collection of Vale-compatible rules and their explanations. Follow @jdkato on X for weekly updates!',
-			link: 'https://vale.sh/explorer'
+			link: '/explorer'
 		},
 		{
 			name: 'config-generator',
 			tech: 'Svelte',
 			info: 'Quickly generate comprehensive configuration files for Vale.',
-			link: 'https://vale.sh/generator'
+			link: '/generator'
 		}
 	];
 </script>

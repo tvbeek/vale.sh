@@ -21,6 +21,10 @@ export const docsConfig: DocsConfig = {
             href: "/generator",
         },
         {
+            title: "Rule Explorer",
+            href: "/explorer",
+        },
+        {
             title: "Package Hub",
             href: "/hub",
         },
