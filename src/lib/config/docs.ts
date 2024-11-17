@@ -84,11 +84,6 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "FAQ",
-                    href: "/docs/faq",
-                    items: [],
-                },
-                {
                     title: "Support ❤️",
                     href: "/docs/support",
                     items: [],
@@ -96,6 +91,11 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Media",
                     href: "/docs/media",
+                    items: [],
+                },
+                {
+                    title: "FAQ",
+                    href: "/docs/faq",
                     items: [],
                 },
                 {

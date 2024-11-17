@@ -5,6 +5,9 @@ description: Learn how to configure Vale for your specific needs.
 
 <script>
     import Alert from '$lib/components/Alert.svelte';
+    import CoreSettings from '$lib/components/docs/CoreSettings.svelte';
+    import FormatSettings from '$lib/components/docs/FormatSettings.svelte';
+    import Cascade from '$lib/components/docs/Cascade.svelte';
 </script>
 
 ## Creating a `.vale.ini` File
@@ -31,9 +34,59 @@ $ ls styles
 $ vale README.md
 ```
 
-Check out our [sample repository][1] for a complete example of the required components of a Vale configuration.
+Check out our [sample repository][1] for a complete example of the required
+components of a Vale configuration.
 
 ## File structure
+
+Vale’s configuration is read from a `.vale.ini` file. This file is
+[INI-formatted][4] and consists of mutiple sections: core settings,
+format associations, and format-specific settings:
+
+```ini
+# Core settings appear at the top
+# (the "global" section).
+
+[formats]
+# Format associations appear under
+# the optional "formats" section.
+
+[*]
+# Format-specific settings appear
+# under a user-provided "glob"
+# pattern.
+```
+
+### Core settings
+
+Core settings appear at the top of the file and apply to the application itself
+rather than a specific file format.
+
+<CoreSettings />
+
+### Format associations
+
+Format associations allow you to associate an "unknown" file extension with a
+supported one:
+
+```ini
+[formats]
+mdx = md
+```
+
+In the example above, we're telling Vale to treat MDX files as Markdown files.
+Note that this is merely an extension-level substitution and is not a means of
+adding support for a new file type.
+
+### Format-specific settings
+
+Format-specific sections apply their settings only to files that match their
+associated glob pattern.
+
+For example, `[*]` matches all files while `[*.{md,txt}]` only matches files
+that end with either `.md` or `.txt.`
+
+<FormatSettings />
 
 ## Search process
 
@@ -43,8 +96,9 @@ the <a class="underline" href="/manual/config">--config</a> option or by definin
 </Alert>
 
 Vale expects its configuration to be in a file named `.vale.ini` or
-`_vale.ini`. It'll start looking for this file in the same folder as the file
-that's being linted. If it can't find one, it'll search up the file tree.
+`_vale.ini`. It'll start looking for this file in the directory that the
+`vale` command was run from and then search up the file tree until it finds
+one.
 
 If no ancestor of the current directory has a configuration file, Vale will
 use a global configuration file (see below).
@@ -52,8 +106,8 @@ use a global configuration file (see below).
 ## Global configuration
 
 In addition to project-specific configurations, Vale also supports a global
-configuration file and `StylesPath`. The expected location of the global
-configuration depends on your operating system:
+configuration file. The expected location of the global configuration depends
+on your operating system:
 
 | OS      | Search Locations                                   |
 | :------ | :------------------------------------------------- |
@@ -70,6 +124,13 @@ instead of, any other configuration sources.
 In other words, this config file is _always_ loaded and is read after
 any other sources to allow for project-agnostic customization.
 
+## Cascading overrides
+
+Vale's configuration is capable of handling complex multi-format projects.
+
+<Cascade />
+
 [1]: https://github.com/errata-ai/vale-boilerplate
 [2]: https://github.com/errata-ai/Microsoft
 [3]: https://github.com/errata-ai/write-good
+[4]: https://ini.unknwon.io/docs/intro
