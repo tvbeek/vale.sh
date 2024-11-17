@@ -61,6 +61,9 @@ devDependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  config-ini-parser:
+    specifier: ^1.6.1
+    version: 1.6.1
   eslint:
     specifier: ^9.7.0
     version: 9.14.0
@@ -1631,6 +1634,10 @@ packages:
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    dev: true
+
+  /config-ini-parser@1.6.1:
+    resolution: {integrity: sha512-6YBVmXlWiUKDhjn+S/1ju2+8j8Qnj1PqR8yE5DmLrQRtBOc9kgMLyutFl2so1FNVHevR/A4nY7z9EWw8s6g/Cw==}
     dev: true
 
   /cookie@0.6.0:

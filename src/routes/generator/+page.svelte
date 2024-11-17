@@ -7,6 +7,9 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import TextEditor from '$lib/components/TextEditor.svelte';
+	import { ConfigIniParser } from 'config-ini-parser';
+	import { supplementaryStyles, baseStyles, configs } from './config.js';
+	import { clean } from './util.js';
 
 	const { copied, copyCode, codeString, setCodeString } = createCopyCodeButton();
 
@@ -17,54 +20,12 @@
 		});
 	}
 
-	const configs = [
-		{
-			value: 'hugo',
-			label: 'Hugo'
-		},
-		{
-			value: 'mdx',
-			label: 'MDX'
-		},
-		{
-			value: 'svelte',
-			label: 'Svelte'
-		}
-	];
+	let value = $state(`StylesPath = styles
 
-	const supplementaryStyles = [
-		{
-			value: 'proselint',
-			label: 'proselint'
-		},
-		{
-			value: 'write-good',
-			label: 'write-good'
-		},
-		{
-			value: 'alex',
-			label: 'alex'
-		},
-		{
-			value: 'joblint',
-			label: 'Joblint'
-		}
-	];
+MinAlertLevel = suggestion
 
-	const baseStyles = [
-		{
-			value: 'microsoft',
-			label: 'Microsoft Writing Style Guide'
-		},
-		{
-			value: 'google',
-			label: 'Google Developer Documentation Style Guide'
-		},
-		{
-			value: 'redhat',
-			label: 'Red Hat Documentation Style Guide'
-		}
-	];
+[*]
+BasedOnStyles = Vale`);
 
 	let baseStyle = $state('');
 	const baseLabel = $derived(
@@ -74,12 +35,44 @@
 	let selectedStyles = $state(['']);
 	let selectedConfigs = $state(['']);
 
-	let value = `StylesPath = styles
+	// Generate the configuration file when any of the options change:
+	$effect(() => {
+		let pkgs = [];
+		let styles = ['Vale'];
 
-MinAlertLevel = suggestion
+		const parser = new ConfigIniParser();
 
-[*]
-BasedOnStyles = Vale`;
+		const base = baseStyles.find((f) => f.value === baseStyle);
+		if (base !== undefined) {
+			pkgs.push(base.value);
+			styles.push(base.value);
+		}
+
+		const supplementary = selectedStyles.map((s) => supplementaryStyles.find((f) => f.value === s));
+		for (const s of supplementary) {
+			if (s !== undefined) {
+				pkgs.push(s.value);
+				styles.push(s.value);
+			}
+		}
+
+		const cfgs = selectedConfigs.map((c) => configs.find((f) => f.value === c));
+		for (const c of cfgs) {
+			if (c !== undefined) {
+				pkgs.push(c.value);
+			}
+		}
+
+		parser.parse(value);
+		if (pkgs.length == 0) {
+			parser.removeOption(null, 'Packages');
+		} else {
+			parser.set(null, 'Packages', pkgs.join(','));
+		}
+
+		parser.set('*', 'BasedOnStyles', styles.join(','));
+		value = clean(parser.stringify());
+	});
 </script>
 
 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
