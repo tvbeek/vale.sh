@@ -90,8 +90,8 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "Social",
-                    href: "/docs/social",
+                    title: "Media",
+                    href: "/docs/media",
                     items: [],
                 },
                 {
@@ -300,6 +300,11 @@ export const docsConfig: DocsConfig = {
             title: "Intergrations",
             items: [
                 {
+                    title: "Overview",
+                    href: "/docs/integrations/overview",
+                    items: [],
+                },
+                {
                     title: "CircleCI",
                     href: "https://circleci.com/developer/orbs/orb/circleci/vale",
                     external: true,
@@ -375,11 +380,6 @@ export const docsConfig: DocsConfig = {
             title: "Guides",
             items: [
                 {
-                    title: "CI/CD",
-                    href: "/docs/guides/ci-cd",
-                    items: [],
-                },
-                {
                     title: "LSP",
                     href: "/docs/guides/lsp",
                     items: [],
@@ -387,17 +387,6 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Regex",
                     href: "/docs/guides/regex",
-                    items: [],
-                },
-                {
-                    title: "Scripting",
-                    href: "/docs/guides/scripting",
-                    items: [],
-                },
-                {
-                    title: "Local overrides",
-                    href: "/docs/guides/local-overrides",
-                    external: true,
                     items: [],
                 },
             ],
