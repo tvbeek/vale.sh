@@ -78,7 +78,7 @@ BasedOnStyles = Vale`);
 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
 	<Card.Root>
 		<Card.Header class="text-center">
-			<Card.Title>Config Generator</Card.Title>
+			<Card.Title class="text-4xl">Config Generator</Card.Title>
 			<Card.Description
 				>Quickly generate comprehensive configuration files for Vale.</Card.Description
 			>
