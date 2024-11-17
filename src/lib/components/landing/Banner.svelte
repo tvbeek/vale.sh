@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
 	import { siteConfig } from '$lib/config/site.js';
 	import { mode } from 'mode-watcher';
 	import { onMount } from 'svelte';
@@ -22,7 +21,11 @@
 			Vale is an open-source, command-line tool that brings your editorial style guide to life.
 		</p>
 		<div class="mt-10 flex items-center justify-center gap-x-6">
-			<Button variant="outline">Get Started</Button>
+			<a
+				href="/docs/install"
+				class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+				>Get Started</a
+			>
 			<a href="/docs" class="text-sm/6 font-semibold"
 				>Learn more <span aria-hidden="true">→</span></a
 			>
