@@ -45,7 +45,7 @@ BasedOnStyles = Vale`);
 </script>
 
 <div>
-	<div class="mb-2 mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
+	<div class="mb-1 mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
 		<div>
 			<p class="text-xs text-muted-foreground">Project config</p>
 			<TextEditor readonly={false} mode="ini" bind:value={value1} height="190px" />

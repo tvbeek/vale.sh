@@ -130,6 +130,47 @@ any other sources to allow for project-agnostic customization.
 
 ## Cascading overrides
 
+Vale's configuration system supports using multiple configuration files at
+the same time. Typically, this is done in cases where you are contributing to
+a project that already has an established configuration but you want to make
+local changes.
+
+For example, let's say you're working on a project that uses the following
+configuration:
+
+```ini
+StylesPath = styles
+MinAlertLevel = error
+
+[*.md]
+BasedOnStyles = ProjectStyle
+```
+
+Now, let's say you want to add the `write-good` style to your local
+configuration.
+
+Create a global configuration file&mdash;for macOS, this would be
+`~/Library/Application Support/vale/.vale.ini` (see above for other OSes).
+
+```ini
+StylesPath = localpath
+
+Packages = write-good
+
+[*.md]
+BasedOnStyles = write-good
+```
+
+Now, when you run Vale, it will show results from both the `ProjectStyle` and
+`write-good` styles locally.
+
+You'll notice that multi-valued settings (like `BasedOnStyles`) are merged
+together, while single-valued settings (like `MinAlertLevel`) are overridden.
+
+This allows you to contribute to projects with established styles while
+still being able to make local changes. See the widget below for a visual
+representation of this process.
+
 <Cascade />
 
 [1]: https://github.com/errata-ai/vale-boilerplate
