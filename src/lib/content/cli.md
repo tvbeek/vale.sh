@@ -6,25 +6,13 @@ description: Learn about the Vale command-line interface.
 <script lang="ts">
   import CLIOptions from "$lib/components/docs/CLIOptions.svelte";
   import Env from "$lib/components/docs/Env.svelte";
+  import Errors from "$lib/components/docs/Errors.svelte";
 </script>
 
 The Vale CLI is a powerful tool for linting your content in a variety of
 formats. To get started, try running with no arguments:
 
-```console
-$ vale
-vale - A command-line linter for prose.
-
-Usage:  vale [options] [input...]
-        vale myfile.md myfile1.md mydir1
-        vale --output=JSON [input...]
-
-<...>
-
-See https://vale.sh for more setup information.
-
-(Or use vale --help for a listing of all CLI options.)
-```
+![Vale's help text](/media/help2.png)
 
 ## Environment variables
 
@@ -42,37 +30,20 @@ $ vale ls-vars
 The exact steps for setting environment variables depend on your operating
 system, but here are some useful links for [Windows][1] and [macOS][2].
 
-## Options
+## CLI options
 
-### sync
+<CLIOptions />
 
-<CLIOptions name="sync" />
+## Return codes
 
-The `sync` command downloads and installs all packages listed in your
-`.vale.ini` file.
+The `vale` CLI returns the following exit codes:
 
-```console
-$ vale sync
-```
+<Errors />
 
-See the [Packages](/docs/packages) section for more information.
+It will try to respect the value of `--output` when printing to `stderr`. For
+example:
 
-### ls-config
-
-<CLIOptions name="ls-config" />
-
-The `ls-config` command prints the current configuration options (as JSON) to
-`stdout`.
-
-```console
-$ vale ls-config
-```
-
-### ls-metrics
-
-<CLIOptions name="ls-config" />
-
-## errors
+![Vale's exit codes](/media/error.png)
 
 [1]: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/setx
 [2]: https://support.apple.com/guide/terminal/use-environment-variables-apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac
