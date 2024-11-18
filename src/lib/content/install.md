@@ -5,6 +5,7 @@ description: Get started with Vale in just a few minutes.
 
 <script>
     import InstallOptions from '$lib/components/docs/InstallOptions.svelte';
+    import InstallTabs from '$lib/components/docs/InstallTabs.svelte';
 </script>
 
 ## Package Managers
@@ -12,7 +13,7 @@ description: Get started with Vale in just a few minutes.
 In general, the recommended approach on all platforms is to use a package
 manager such as Homebrew (macOS), Chocolatey (Windows), or Snapcraft (Linux).
 
-<InstallOptions />
+<InstallTabs />
 
 This will ensure that Vale is available on your `$PATH` and allow you to stay
 up to date with new releases.
