@@ -5,47 +5,127 @@ description: Learn about what Vale is (and isn't).
 
 <script lang="ts">
 	import TechStack from '$lib/components/TechStack.svelte';
+    import Alert from '$lib/components/Alert.svelte';
 </script>
 
-When you think about software built for automated writing assistance, a lot
-of assumptions probably come to mind. You've heard terms like "cloud-based,"
-"artificial intelligence," and "machine learning." You've been promised
-"sophisticated," human-like feedback to dramatically improve your writing.
+Vale is a command-line tool that brings code-like linting to prose. Vale is
+cross-platform (Windows, macOS, and Linux), written in Go, and available on
+GitHub.
 
-Vale is none of that&mdash;it wasn't designed to be, and it doesn't try to
-be. To put it succinctly, Vale doesn't teach you _how to_ write; it's a tool
-_for_ writers.
+> _Linting_ is the process of ensuring that written work (source code or prose)
+> adheres to a particular style&mdash;for example, Python's [PEP 8][12] style
+> guide (code) or the Google's [Documentation Style Guide][13] (prose).
+
+Before we get into the details of what makes Vale useful, there's one point we
+need to clarify: **Vale is not a general-purpose writing aid**.
+
+It doesn't teach you _how_ to write; it's a tool _for_ writers.
+
+More specifically, Vale focuses (primarily) on the style of writing rather than
+its grammatical correctness&mdash;making it fundamentally different from,
+for example, Grammarly.
+
+![A diagram demonstrating Vale's purpose.](/media/flow.png)
+
+In other words, Vale focuses on ensuring consistency across multiple authors
+(according to customizable guidelines) rather than the general
+"correctness" of a single author's work.
 
 This distinction is particularly important to understand because Vale doesn't
 offer any of its own advice. Instead, it offers a framework for creating and
-enforcing [custom rules][1]. Its approach is much more similar to code linters than it is to traditional grammar checkers.
+enforcing [custom rules][1]. Its approach is much more similar to code linters
+than it is to traditional grammar checkers.
 
-See "[Introducing Vale, an NLP-powered linter for prose][2]" for a more
-detailed explanation.
+## Your style, our editor
 
-## Why should you use Vale?
+One of Vale's most important features is its ability to support external styles
+through its extension system, which only requires some familiarity with the
+YAML file format (and, optionally, regular expressions).
 
-- It will enforce your own style and can go well beyond traditional
-  writing-related rules.
+![A diagram comparing Vale to other tools.](/media/output.png)
 
-- It understands [markup][4] well, allowing you to write your content in
-  Markdown, AsciiDoc, reStructuredText, and more, without syntax-related false
-  positives.
+To get a better idea of how this works, let's look at an example from the
+[Linode documentation][14]:
 
-- It works 100% offline. Your content is never sent to a remote server for
-  processing.
+```yaml
+# `extends` specifies the extension point you're using. Here, we're
+# using `substitution` to ensure correct usage of some techincal and
+# brand-specifc terminology.
+extends: substitution
+# `message` allows you to customize the output shown to your users.
+message: Use '%s' instead of '%s'.
+# We're setting this rule's severity to `error`, which will cause
+# CI builds to fail.
+level: error
+# We're using case-insensitive patterns.
+ignorecase: true
+swap:
+  "(?:LetsEncrypt|Let's Encrypt)": Let's Encrypt
+  'node[.]?js': Node.js
+  'Post?gr?e(?:SQL)': PostgreSQL
+  'java[ -]?scripts?': JavaScript
+  linode cli: Linode CLI
+  linode manager: Linode Manager
+  linode: Linode
+  longview: Longview
+  nodebalancer: NodeBalancer
+```
 
-- [It's fast][6], and can be used pretty much anywhere: the terminal, your
-  [favorite editor][7], [the web][8], or with a CI/CD service.
+In the above example, we've defined a few terms that have a particular
+capitalization style. If Vale finds an instance of a term that matches a
+pattern on the left of swap (case-insensitive) but doesn’t exactly match the
+value on the right, it issues an error. So, for example, `Nodebalancer`,
+`nodebalancer` or any other variation that doesn't exactly match `NodeBalancer`
+will be flagged as an error.
 
-## What technologies does Vale use?
+While this example may appear quite simple, it's possible to achieve fairly
+high coverage on complete editorial style guides. Check out the
+[Package Hub][/hub] for more examples.
+
+## Syntax- and context-aware linting
+
+Another feature that separates Vale from other linters is its ability to
+understand its input at both a syntactic and contextual level.
+
+![A diagram showcases Vale's ability to understand markup.](/media/syntax.png)
+
+This level of understanding gives you fine-grained control over the linting
+process, including the ability to limit rules to certain sections
+(e.g., only headings) or ignore sections entirely (block and inline code are
+ignored by default).
+
+Additionally, since Vale is built on top of an NLP library, you can also target
+specific segments of text&mdash;allowing you to, for example, warn about
+paragraphs that exceed a certain number of words or sentences that end with
+prepositions.
+
+## Sub-second performance
+
+Vale is designed to be fast enough to be included in continuous integration
+test suites for large (> 1,000 files) repositories. To give you an idea of its
+performance, we ran Vale on three GitHub repositories of varying sizes and
+formats:
+
+| GitHub Repo                                                              | Format           | Files | Average Size (lines) | 5-Run Average (seconds) |
+| ------------------------------------------------------------------------ | ---------------- | ----- | -------------------- | ----------------------- |
+| [linode / docs](https://github.com/linode/docs)                          | Markdown         | 1,067 | 189.376              | 23.713                  |
+| [nltk / nltk_book](https://github.com/nltk/nltk_book)                    | reStructuredText | 43    | 833.372              | 18.662                  |
+| [clojure-cookbook](https://github.com/clojure-cookbook/clojure-cookbook) | AsciiDoc         | 196   | 128.408              | 15.237                  |
+
+In each case, Vale was configured to lint against its `write-good` style. As
+you can see, it took an approximate average of only 0.0441 seconds to lint each
+file.
+
+See the project's [README][15] for a comparison with other tools.
+
+## Tech stack
 
 Vale is a 100% open-source, MIT-licensed project that consists of multiple
 parts:
 
 <TechStack />
 
-## Who created Vale?
+## Meet the creator
 
 Hi, there!
 
@@ -69,3 +149,7 @@ or [Open Collective][11].
 [9]: https://github.com/jdkato
 [10]: https://github.com/sponsors/jdkato
 [11]: https://opencollective.com/vale
+[12]: https://www.python.org/dev/peps/pep-0008/
+[13]: https://developers.google.com/style/
+[14]: https://github.com/linode/docs/blob/master/ci/vale/styles/Linode/Terms.yml
+[15]: https://github.com/errata-ai/vale?tab=readme-ov-file#benchmarks
