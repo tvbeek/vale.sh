@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@rehype-pretty/transformers':
+    specifier: ^0.13.2
+    version: 0.13.2
   mode-watcher:
     specifier: ^0.4.1
     version: 0.4.1(svelte@5.1.16)
@@ -106,9 +109,6 @@ devDependencies:
   shiki:
     specifier: ^1.23.0
     version: 1.23.0
-  shiki-transformer-copy-button:
-    specifier: ^0.0.3
-    version: 0.0.3
   svelte:
     specifier: ^5.0.0
     version: 5.1.16
@@ -750,6 +750,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@rehype-pretty/transformers@0.13.2:
+    resolution: {integrity: sha512-p2ciQSwqy5Ip8aNUa9q6rdS/hJZXrxHYYfDVOHvKOsBu3t9HDmQ65YX6r9Qbl19vi160OAxmGF7MIoCRDJrRhg==}
+    engines: {node: '>=18'}
+    dev: false
 
   /@rollup/rollup-android-arm-eabi@4.26.0:
     resolution: {integrity: sha512-gJNwtPDGEaOEgejbaseY6xMFu+CPltsc8/T+diUTTbOQLqD+bnrJq9ulH6WD69TqwqWmrfRAtUv30cCFZlbGTQ==}
@@ -2177,16 +2182,6 @@ packages:
       space-separated-tokens: 2.0.2
     dev: true
 
-  /hastscript@9.0.0:
-    resolution: {integrity: sha512-jzaLBGavEDKHrc5EfFImKN7nZKKBdSLIdGvCwDZ9TfzbF2ffXiov8CKE445L2Z1Ek2t/m4SKQ2j6Ipv7NyUolw==}
-    dependencies:
-      '@types/hast': 3.0.4
-      comma-separated-tokens: 2.0.3
-      hast-util-parse-selector: 4.0.0
-      property-information: 6.5.0
-      space-separated-tokens: 2.0.2
-    dev: true
-
   /html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
     dev: true
@@ -3061,12 +3056,6 @@ packages:
   /shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
-    dev: true
-
-  /shiki-transformer-copy-button@0.0.3:
-    resolution: {integrity: sha512-MPwtpYEWWhLFVBaEY/IeI34tBNuynu2n/khHEysTa1ijodLauS7fg38FTBthML3WxpE/Z5kRdZeitRQx7FJgdA==}
-    dependencies:
-      hastscript: 9.0.0
     dev: true
 
   /shiki@1.23.0:

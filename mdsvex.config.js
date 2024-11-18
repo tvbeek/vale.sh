@@ -1,17 +1,13 @@
-import { mdsvex, escapeSvelte } from 'mdsvex';
+import { escapeSvelte } from 'mdsvex';
 import { createHighlighter } from 'shiki';
-import { addCopyButton } from 'shiki-transformer-copy-button'
 
-const theme = 'github-dark';
-
-// optional
-const options = {
-    // delay time from "copied" state back to normal state
-    toggle: 2000,
-}
+const themes = [
+    'github-light',
+    'slack-dark',
+];
 
 const highlighter = await createHighlighter({
-    themes: [theme],
+    themes: themes,
     langs: [
         'json',
         'bash',
@@ -32,10 +28,11 @@ const mdsvexOptions = {
         highlighter: async (code, lang = 'text') => {
             const html = escapeSvelte(highlighter.codeToHtml(code, {
                 lang,
-                theme,
-                transformers: [
-                    addCopyButton(options)
-                ]
+                themes: {
+                    light: themes[0],
+                    dark: themes[1],
+                },
+                transformers: [],
             }));
             return `{@html \`${html}\` }`;
         }

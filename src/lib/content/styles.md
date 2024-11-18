@@ -28,7 +28,7 @@ tokens:
 These collections are referred to as _styles_ and are organized in a
 nested folder structure at a user-specified location. For example,
 
-```yaml
+```plaintext
 styles/
 ├── base/
 │   ├── ComplexWords.yml
@@ -40,3 +40,8 @@ styles/
 └── docs/
 ├── Branding.yml
 ```
+
+where _base_, _blog_, and _docs_ are your styles that each contain certain
+rules.
+
+## Rules
