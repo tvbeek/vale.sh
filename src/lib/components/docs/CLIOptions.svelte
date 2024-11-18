@@ -108,7 +108,7 @@
 	];
 </script>
 
-<Table.Root class="mt-4">
+<Table.Root class="my-0">
 	<Table.Header>
 		<Table.Row>
 			<Table.Head>Name</Table.Head>
