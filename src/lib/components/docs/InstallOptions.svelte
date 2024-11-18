@@ -6,7 +6,7 @@
 {#snippet choco()}
 	<code data-language="shell" data-theme="Lambda Studio — Blackout" style="display: grid;">
 		<span data-line>
-			<span style="color:#FFF;font-weight:bold">choco</span>
+			<span style="color:#FFF;font-weight:bold">&#x3e; choco</span>
 			<span style="color:#FFF8"> install</span>
 			<span style="color:#FFF8"> vale</span>
 		</span>
@@ -16,7 +16,7 @@
 {#snippet brew()}
 	<code data-language="shell" data-theme="Lambda Studio — Blackout" style="display: grid;">
 		<span data-line>
-			<span style="color:#FFF;font-weight:bold">brew</span>
+			<span style="color:#FFF;font-weight:bold">&#x24; brew</span>
 			<span style="color:#FFF8"> install</span>
 			<span style="color:#FFF8"> vale</span>
 		</span>
@@ -26,7 +26,7 @@
 {#snippet snap()}
 	<code data-language="shell" data-theme="Lambda Studio — Blackout" style="display: grid;">
 		<span data-line>
-			<span style="color:#FFF;font-weight:bold">snap</span>
+			<span style="color:#FFF;font-weight:bold">&#x24; snap</span>
 			<span style="color:#FFF8"> install</span>
 			<span style="color:#FFF8"> vale</span>
 		</span>

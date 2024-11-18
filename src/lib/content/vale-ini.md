@@ -128,6 +128,10 @@ instead of, any other configuration sources.
 In other words, this config file is _always_ loaded and is read after
 any other sources to allow for project-agnostic customization.
 
+## Cascading overrides
+
+<Cascade />
+
 [1]: https://github.com/errata-ai/vale-boilerplate
 [2]: https://github.com/errata-ai/Microsoft
 [3]: https://github.com/errata-ai/write-good

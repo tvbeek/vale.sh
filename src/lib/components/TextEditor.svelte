@@ -10,17 +10,30 @@
 
 	let {
 		mode,
+		height,
 		value = $bindable(),
 		readonly
-	}: { mode: 'yaml' | 'ini'; value: string; readonly: boolean } = $props();
+	}: { mode: 'yaml' | 'ini'; value: string; readonly: boolean; height: string } = $props();
 	let language = mode === 'yaml' ? yaml() : ini;
 
 	// Custom theme to disable line highlighting
 	const noLineHighlightTheme = EditorView.theme({
 		'.cm-line': {
 			backgroundColor: 'transparent !important'
+		},
+		'.cm-editor': {},
+		'.cm-scroller': {
+			overflow: 'auto',
+			'min-height': height,
+			'max-height': height
 		}
 	});
 </script>
 
-<CodeMirror bind:value lang={language} theme={[oneDark, noLineHighlightTheme]} {readonly} />
+<CodeMirror
+	bind:value
+	lang={language}
+	theme={[oneDark, noLineHighlightTheme]}
+	{readonly}
+	class="h-full"
+/>

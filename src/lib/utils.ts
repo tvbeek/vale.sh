@@ -24,6 +24,10 @@ export function copyStringToClipboard(str: string) {
     navigator.clipboard.writeText(str);
 }
 
+function stripPrompt(str: string) {
+    return str.replace(/^\$|> /, "");
+}
+
 export function createCopyCodeButton() {
     const codeString = writable("");
     const copied = writable(false);
@@ -31,7 +35,7 @@ export function createCopyCodeButton() {
 
     function copyCode() {
         if (!isBrowser) return;
-        navigator.clipboard.writeText(get(codeString));
+        navigator.clipboard.writeText(stripPrompt(get(codeString)));
         copied.set(true);
         clearTimeout(copyTimeout);
         copyTimeout = window.setTimeout(() => {
