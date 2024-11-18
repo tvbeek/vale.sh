@@ -6,6 +6,7 @@ description: Get started with Vale in just a few minutes.
 <script>
     import InstallOptions from '$lib/components/docs/InstallOptions.svelte';
     import InstallTabs from '$lib/components/docs/InstallTabs.svelte';
+    import { Badge } from "$lib/components/ui/badge";
 </script>
 
 ## Package Managers
@@ -28,14 +29,6 @@ before installing.
 Linux. To use one of these, you'll need to download the archive for your
 platform, extract it to a local directory, and (optionally) add the extracted
 directory to your `$PATH`.
-
-An example of this process for Linux is given below:
-
-```shell
-wget https://github.com/errata-ai/vale/releases/download/v2.28.0/vale_2.28.0_Linux_64-bit.tar.gz
-mkdir bin && tar -xvzf vale_2.28.0_Linux_64-bit.tar.gz -C bin
-export PATH=./bin:"$PATH"
-```
 
 ## Docker
 
@@ -72,6 +65,13 @@ ENV PATH="/dita-ot-3.6/bin:$PATH"
 
 ENTRYPOINT ["/bin/vale"]
 ```
+
+## Other options
+
+| Source | Documentation                                                                    | Status                                          |
+| ------ | -------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `PyPI` | [`https://pypi.org/project/vale/`](https://pypi.org/project/vale/)               | <Badge variant="secondary">maintained</Badge>   |
+| `NPM`  | [`package/@ocular-d/vale-bin`](https://www.npmjs.com/package/@ocular-d/vale-bin) | <Badge variant="secondary">unmaintained</Badge> |
 
 [1]: https://hub.docker.com/r/jdkato/vale
 [2]: https://github.com/errata-ai/vale/releases
