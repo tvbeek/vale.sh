@@ -5,7 +5,6 @@ description: Get started with Vale in just a few minutes.
 
 <script>
     import InstallOptions from '$lib/components/docs/InstallOptions.svelte';
-    import PkgList from '$lib/components/docs/PkgList.svelte';
 </script>
 
 ## Package Managers
@@ -18,11 +17,9 @@ manager such as Homebrew (macOS), Chocolatey (Windows), or Snapcraft (Linux).
 This will ensure that Vale is available on your `$PATH` and allow you to stay
 up to date with new releases.
 
-<PkgList />
-
-Vale can also be found at a number of other package repositories. Many of these
-are community-maintained, so please read the package's documentation before
-installing.
+Vale can also be found at a number of [other package repositories][3].
+These are community-maintained, so please read the package's documentation
+before installing.
 
 ## GitHub Releases
 
@@ -77,3 +74,4 @@ ENTRYPOINT ["/bin/vale"]
 
 [1]: https://hub.docker.com/r/jdkato/vale
 [2]: https://github.com/errata-ai/vale/releases
+[3]: https://repology.org/project/vale/versions

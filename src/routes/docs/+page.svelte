@@ -8,6 +8,7 @@
 	import { cn } from '$lib/utils.js';
 
 	export let data: PageData;
+	$: markdown = data.component;
 
 	type Component = $$Generic<ComponentType>;
 	$: component = data.component as unknown as Component;
@@ -31,14 +32,12 @@
 				</p>
 			{/if}
 		</div>
-
-		<div class="markdown pb-12 pt-8" id="markdown">
-			<svelte:component this={component} />
+		<div class="mb-6">
+			<svelte:component this={markdown} />
 		</div>
-
 		<DocsPager />
 	</div>
-	<div class="hidden text-sm xl:block">
+	<div class="hidden text-sm md:block">
 		<div class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6">
 			{#key $page.url.pathname}
 				<TableOfContents />

@@ -112,8 +112,6 @@
 	<Table.Header>
 		<Table.Row>
 			<Table.Head>Name</Table.Head>
-			<Table.Head>Type</Table.Head>
-			<Table.Head>Params</Table.Head>
 			<Table.Head>Description</Table.Head>
 		</Table.Row>
 	</Table.Header>
@@ -121,11 +119,8 @@
 		{#each options as opt}
 			<Table.Row>
 				<Table.Cell><code>{opt.name}</code></Table.Cell>
-				<Table.Cell><code>{opt.type}</code></Table.Cell>
-				<Table.Cell><code>{opt.params}</code></Table.Cell>
 				<Table.Cell>
 					{@html opt.description}
-					<br /><br />
 					<pre>{opt.usage}</pre>
 				</Table.Cell>
 			</Table.Row>

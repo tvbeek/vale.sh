@@ -2,7 +2,7 @@
 	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import { ModeWatcher } from 'mode-watcher';
-	import '../styles/app.css';
+	import '../app.css';
 	let { children } = $props();
 </script>
 

@@ -59,12 +59,12 @@
 				{/if}
 			</div>
 		{/if}
-		<div class="markdown pb-12 pt-8" id="markdown">
+		<div class="mb-6">
 			<svelte:component this={markdown} />
 		</div>
 		<DocsPager />
 	</div>
-	<div class="hidden text-sm xl:block">
+	<div class="hidden text-sm md:block">
 		<div class="sticky top-14 -mt-10 h-[calc(100vh-3.5rem)] py-8">
 			<ScrollArea class="h-full">
 				{#key $page.url.pathname}

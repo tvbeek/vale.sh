@@ -84,13 +84,13 @@ export const docsConfig: DocsConfig = {
                     items: [],
                 },
                 {
-                    title: "Support ❤️",
-                    href: "/docs/support",
+                    title: "Media",
+                    href: "/docs/media",
                     items: [],
                 },
                 {
-                    title: "Media",
-                    href: "/docs/media",
+                    title: "Support ❤️",
+                    href: "/docs/support",
                     items: [],
                 },
                 {
