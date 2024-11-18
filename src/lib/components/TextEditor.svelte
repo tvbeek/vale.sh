@@ -4,7 +4,8 @@
 	import { StreamLanguage, LanguageSupport } from '@codemirror/language';
 	import { yaml } from '@codemirror/lang-yaml';
 	import { EditorView } from '@codemirror/view';
-	import { oneDark } from '@codemirror/theme-one-dark';
+	import { bespin, tomorrow } from 'thememirror';
+	import { mode as colorMode } from 'mode-watcher';
 
 	const ini = new LanguageSupport(StreamLanguage.define(properties));
 
@@ -21,7 +22,9 @@
 		'.cm-line': {
 			backgroundColor: 'transparent !important'
 		},
-		'.cm-editor': {},
+		'.cm-content': {
+			fontSize: '14px' // Set the desired font size here
+		},
 		'.cm-scroller': {
 			overflow: 'auto',
 			'min-height': height,
@@ -30,10 +33,20 @@
 	});
 </script>
 
-<CodeMirror
-	bind:value
-	lang={language}
-	theme={[oneDark, noLineHighlightTheme]}
-	{readonly}
-	class="h-full"
-/>
+{#if $colorMode === 'dark'}
+	<CodeMirror
+		bind:value
+		lang={language}
+		theme={[bespin, noLineHighlightTheme]}
+		{readonly}
+		class="h-full"
+	/>
+{:else}
+	<CodeMirror
+		bind:value
+		lang={language}
+		theme={[tomorrow, noLineHighlightTheme]}
+		{readonly}
+		class="h-full"
+	/>
+{/if}

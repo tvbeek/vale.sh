@@ -168,10 +168,7 @@ You'll notice that multi-valued settings (like `BasedOnStyles`) are merged
 together, while single-valued settings (like `MinAlertLevel`) are overridden.
 
 This allows you to contribute to projects with established styles while
-still being able to make local changes. See the widget below for a visual
-representation of this process.
-
-<Cascade />
+still being able to make local changes.
 
 [1]: https://github.com/errata-ai/vale-boilerplate
 [2]: https://github.com/errata-ai/Microsoft

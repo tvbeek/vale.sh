@@ -61,6 +61,7 @@
     },
     "dependencies": {
         "@rehype-pretty/transformers": "^0.13.2",
-        "mode-watcher": "^0.4.1"
+        "mode-watcher": "^0.4.1",
+        "thememirror": "^2.0.1"
     }
 }
