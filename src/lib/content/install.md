@@ -70,7 +70,7 @@ ENTRYPOINT ["/bin/vale"]
 
 | Source | Documentation                                                                    | Status                                          |
 | ------ | -------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `PyPI` | [`https://pypi.org/project/vale/`](https://pypi.org/project/vale/)               | <Badge variant="secondary">maintained</Badge>   |
+| `PyPI` | [`project/vale`](https://pypi.org/project/vale/)                                 | <Badge variant="secondary">active</Badge>       |
 | `NPM`  | [`package/@ocular-d/vale-bin`](https://www.npmjs.com/package/@ocular-d/vale-bin) | <Badge variant="secondary">unmaintained</Badge> |
 
 [1]: https://hub.docker.com/r/jdkato/vale

@@ -171,60 +171,71 @@ export const docsConfig: DocsConfig = {
             ]
         },
         {
-            title: "Rules",
+            title: "Checks",
             items: [
                 {
                     title: "existence",
+                    info: "Check for the presence of a specific regex pattern.",
                     href: "/docs/ext/existence",
                     items: [],
                 },
                 {
                     title: "substitution",
+                    info: "Replace a regex pattern with a specific string.",
                     href: "/docs/ext/substitution",
                     items: [],
                 },
                 {
                     title: "occurrence",
+                    info: "Ensure the presence of a regex pattern a specific number of times.",
                     href: "/docs/ext/occurrence",
                     items: [],
                 },
                 {
                     title: "repetition",
+                    info: "Avoid repeating a regex pattern a specific number of times.",
                     href: "/docs/ext/repetition",
                     items: [],
                 },
                 {
                     title: "consistency",
+                    info: "Ensure that a regex pattern is used consistently.",
                     href: "/docs/ext/consistency",
                     items: [],
                 },
                 {
                     title: "conditional",
+                    info: "Check for the presence of a regex pattern based on a condition.",
                     href: "/docs/ext/conditional",
                     items: [],
                 },
                 {
                     title: "capitalization",
+                    info: "Ensure that a regex pattern is capitalized in a specific way.",
                     href: "/docs/ext/capitalization",
                     items: [],
                 },
                 {
                     title: "metric",
+                    info: "Check the readability (or other metrics) of your content using custom forumulas.",
                     href: "/docs/ext/metric",
                     items: [],
                 },
                 {
                     title: "spelling",
+                    info: "Spell check using Hunspell-compatible dictionaries.",
                     href: "/docs/ext/spelling",
                     items: [],
                 },
                 {
                     title: "sequence",
+                    info: "Ensure that a regex pattern is used in a specific order. Supports part-of-speech tagging.",
                     href: "/docs/ext/sequence",
                     items: [],
                 },
                 {
                     title: "script",
+                    info: "Run a custom Tengo script to check your content.",
                     href: "/docs/ext/script",
                     items: [],
                 },

@@ -8,9 +8,8 @@
 	Help Vale grow by
 	<a
 		href="/docs/support"
-		class="inline-flex items-center font-semibold underline-offset-2 hover:underline"
+		class="inline-flex items-center font-semibold underline underline-offset-2"
 	>
 		supporting the project
-		<ArrowUpRight class="ml-0.5 h-3 w-3" />
 	</a>!
 </p>

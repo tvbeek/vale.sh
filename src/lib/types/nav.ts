@@ -7,6 +7,7 @@ export type NavItem = {
     external?: boolean;
     icon?: keyof typeof Icons;
     label?: string;
+    info?: string;
 };
 
 export type SidebarNavItem = NavItem & {

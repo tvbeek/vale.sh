@@ -5,7 +5,6 @@ description: Learn about what Vale is (and isn't).
 
 <script lang="ts">
 	import TechStack from '$lib/components/TechStack.svelte';
-    import Alert from '$lib/components/Alert.svelte';
 </script>
 
 Vale is a command-line tool that brings code-like linting to prose. Vale is
