@@ -22,6 +22,7 @@ const highlighter = await createHighlighter({
         'coffeescript',
         'regex',
         'regexp',
+        'templ',
     ]
 });
 
