@@ -60,6 +60,7 @@
         "zod": "^3.23.8"
     },
     "dependencies": {
+        "@algolia/autocomplete-js": "^1.17.7",
         "@rehype-pretty/transformers": "^0.13.2",
         "mode-watcher": "^0.4.1",
         "thememirror": "^2.0.1"

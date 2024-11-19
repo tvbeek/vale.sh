@@ -22,3 +22,7 @@ export const query =
             return { 'serverError': err };
         }
     }
+
+export const search = async (query: string) => {
+    return fetch(`https://vale.sh/.netlify/functions/search?q=${query}`)
+}

@@ -12,7 +12,7 @@ export default defineConfig({
             "@codemirror/view",
             "@codemirror/state",
             "@codemirror/legacy-modes",
-            "@codemirror/theme-one-dark"
+            "@codemirror/theme-one-dark",
         ],
     },
 });
