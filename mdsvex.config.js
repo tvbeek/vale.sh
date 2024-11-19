@@ -17,6 +17,7 @@ const highlighter = await createHighlighter({
         'properties',
         'dockerfile',
         'console',
+        'rust',
     ]
 });
 
