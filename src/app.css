@@ -279,13 +279,15 @@ html[data-theme='dark'] {
 	/* edited */
 	--aa-input-background-color-rgb: 12, 10, 9;
 	--aa-background-color-rgb: 12, 10, 9;
+	--aa-selected-color-rgb: 40, 37, 36;
+	--aa-selected-color-alpha: 0.55;
 
-	--aa-selected-color-rgb: 146, 138, 255;
-	--aa-selected-color-alpha: 0.25;
 	--aa-description-highlight-background-color-rgb: 0 255 255;
 	--aa-description-highlight-background-color-alpha: 0.25;
 	--aa-icon-color-rgb: 119, 119, 163;
+
 	--aa-panel-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
+
 	--aa-scrollbar-track-background-color-rgb: 44, 46, 64;
 	--aa-scrollbar-thumb-background-color-rgb: var(--aa-background-color-rgb);
 }

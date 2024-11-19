@@ -143,15 +143,8 @@
 
 <div class="py-12">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<!--<h3 class="text-balance text-4xl font-semibold tracking-tight sm:text-4xl">Media Library</h3>-->
-			<p class="mt-2 text-lg/8 text-muted-foreground">
-				The Media library is a collection of Vale-related resources to help you learn more about how
-				how others are using Vale.
-			</p>
-		</div>
 		<div
-			class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+			class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
 		>
 			{#each data as media}
 				{@const image = media.image === '' ? '/media/fallback.png' : media.image}
