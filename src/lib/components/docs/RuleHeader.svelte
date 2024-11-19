@@ -62,6 +62,14 @@
 			default: 'N/A',
 			info: `limit: 3`,
 			description: 'The maximum number of times the rule can be triggered in a single file.'
+		},
+		{
+			name: 'vocab',
+			type: 'boolean',
+			required: false,
+			default: 'true',
+			info: `vocab: false`,
+			description: 'If set to false, any active vocabularies will be disabled for the rule.'
 		}
 	];
 </script>

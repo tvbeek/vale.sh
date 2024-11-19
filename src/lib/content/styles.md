@@ -7,6 +7,7 @@ description: Learn about the primary component of Vale's configuration system.
     import Alert from '$lib/components/Alert.svelte';
     import RuleHeader from '$lib/components/docs/RuleHeader.svelte';
     import Checks from '$lib/components/docs/Checks.svelte';
+    import ValeStyle from '$lib/components/docs/ValeStyle.svelte';
 </script>
 
 Vale has a powerful extension system that doesn't require knowledge of
@@ -84,6 +85,13 @@ lookahead (`(?=re)`), negative lookahead (`(?!re)`), positive lookbehind
 (`(?<=re)`), and negative lookbehind (`(?<!re)`).
 
 See the [Regex](/docs/guides/regex) guide for more information.
+
+## Vale
+
+Vale comes with a single built-in style named `Vale` that implements three
+rules, as described in the table below.
+
+<ValeStyle />
 
 [1]: https://pkg.go.dev/regexp/syntax
 [2]: https://github.com/dlclark/regexp2?tab=readme-ov-file#compare-regexp-and-regexp2
