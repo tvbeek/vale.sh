@@ -1,5 +1,7 @@
 <script lang="ts">
+	import Rocket from 'svelte-radix/Rocket.svelte';
 	import { Badge } from '$lib/components/ui/badge';
+	import * as Popover from '$lib/components/ui/popover';
 	import { onMount } from 'svelte';
 	import data from '$lib/data/media.json';
 	import { search as searchLambda } from '$lib/api';
@@ -106,12 +108,35 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-				Go to <span class="underline">anything</span>
+				<Popover.Root>
+					<Popover.Trigger>Go to <span class="underline">anything</span></Popover.Trigger>
+					<Popover.Content class="prose prose-sm dark:prose-invert">
+						<p>
+							The Media Library is indexed daily and supports a variety of advaned search operators:
+						</p>
+						<ul class="list-disc">
+							<li>Faceted search: <code>date:>2021</code> or <code>author:jdkato</code></li>
+							<li>Fuzzy search: <code>term~1</code> or <code>term~2</code></li>
+							<li>Boosted search: <code>text:neovim title:neovim^5</code></li>
+							<li>Regex search: <code>author:/(jdkato|another)/</code></li>
+						</ul>
+					</Popover.Content>
+				</Popover.Root>
+				<Rocket class="inline-block h-8 w-8" />
 			</h2>
 			<form>
 				<div class="mt-4">
 					<div class="w-full" id="autocomplete"></div>
 				</div>
+				<p class="mt-2 text-center text-sm">
+					The <i>Go to Anything</i> feature allows you to search the Media Library using a variety
+					of
+					<a
+						class="underline"
+						href="https://github.com/errata-ai/library/blob/main/README.md#searching"
+						>search operators</a
+					>.
+				</p>
 			</form>
 		</div>
 	</div>
@@ -120,7 +145,7 @@
 <div class="py-12">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h3 class="text-balance text-4xl font-semibold tracking-tight sm:text-4xl">Media library</h3>
+			<h3 class="text-balance text-4xl font-semibold tracking-tight sm:text-4xl">Media Library</h3>
 			<p class="mt-2 text-lg/8 text-muted-foreground">
 				The Media library is a collection of Vale-related resources to help you learn more about how
 				how others are using Vale.
