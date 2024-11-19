@@ -1,103 +1,75 @@
 <script lang="ts">
-	import PlusCircled from 'svelte-radix/PlusCircled.svelte';
-	import { AlbumArtwork, Menu, PodcastEmptyPlaceholder, Sidebar } from './(components)/index.js';
-	import { playlists } from './(data)/playlist.js';
-	import { listenNowAlbums, madeForYouAlbums } from './(data)/album.js';
-	import { Button } from '$lib/components/ui/button';
-	import { Separator } from '$lib/components/ui/separator';
-	import * as Tabs from '$lib/components/ui/tabs';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { onMount } from 'svelte';
-	import { getLibrary } from '$lib/api';
+	import { getLibrary, getOGInfo } from '$lib/api';
 
-	let data = {};
+	type Media = {
+		year: string;
+		type: string;
+		title: string;
+		author: string;
+		url: string;
+	};
+
+	let data = [] as Media[];
 	onMount(async () => {
 		data = await getLibrary();
 		console.log(data);
 	});
 </script>
 
-<div class="border-t">
-	<div class="bg-background">
-		<div class="grid lg:grid-cols-5">
-			<Sidebar {playlists} class="hidden lg:block" />
-			<div class="col-span-3 lg:col-span-4 lg:border-l">
-				<div class="h-full px-4 py-6 lg:px-8">
-					<Tabs.Root value="music" class="h-full space-y-6">
-						<div class="space-between flex items-center">
-							<Tabs.List>
-								<Tabs.Trigger value="music" class="relative">Posts</Tabs.Trigger>
-								<Tabs.Trigger value="podcasts">Videos</Tabs.Trigger>
-								<Tabs.Trigger value="live" disabled>Live</Tabs.Trigger>
-							</Tabs.List>
-							<div class="ml-auto mr-4">
-								<Button>
-									<PlusCircled class="mr-2 h-4 w-4" />
-									Add your own
-								</Button>
+<div class="py-24 sm:py-32">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div class="mx-auto max-w-2xl lg:max-w-4xl">
+			<h2 class="text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">From the blog</h2>
+			<p class="mt-2 text-lg/8">Learn how to grow your business with our expert advice.</p>
+			<div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
+				{#each data as media}
+					{@const og = getOGInfo(media.url)}
+					<article class="relative isolate flex flex-col gap-8 lg:flex-row">
+						<div class="relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
+							<img
+								src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
+								alt=""
+								class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover"
+							/>
+							<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+						</div>
+						<div>
+							<div class="flex items-center gap-x-4 text-xs">
+								<time datetime="2020-03-16" class="text-gray-500">{media.year}</time>
+								<a
+									href="#"
+									class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+									>{media.type}</a
+								>
+							</div>
+							<div class="group relative max-w-xl">
+								<h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+									<a href="#">
+										<span class="absolute inset-0"></span>
+										{media.title}
+									</a>
+								</h3>
+								<p class="mt-5 text-sm/6 text-gray-600">
+									{og.description}
+								</p>
+							</div>
+							<div class="mt-4 flex border-t border-gray-900/5 pt-6">
+								<div class="relative flex items-center gap-x-4">
+									<div class="text-sm/6">
+										<p class="font-semibold text-gray-900">
+											<a href="#">
+												<span class="absolute inset-0"></span>
+												{media.author}
+											</a>
+										</p>
+										<p class="text-gray-600">Co-Founder / CTO</p>
+									</div>
+								</div>
 							</div>
 						</div>
-						<Tabs.Content value="music" class="border-none p-0 outline-none">
-							<div class="flex items-center justify-between">
-								<div class="space-y-1">
-									<h2 class="text-2xl font-semibold tracking-tight">Listen Now</h2>
-									<p class="text-sm text-muted-foreground">Top picks for you. Updated daily.</p>
-								</div>
-							</div>
-							<Separator class="my-4" />
-							<div class="relative">
-								<ScrollArea orientation="both">
-									<div class="flex space-x-4 pb-4">
-										{#each listenNowAlbums as album}
-											<AlbumArtwork
-												{album}
-												class="w-[250px]"
-												aspectRatio="portrait"
-												width={250}
-												height={330}
-											/>
-										{/each}
-									</div>
-								</ScrollArea>
-							</div>
-							<div class="mt-6 space-y-1">
-								<h2 class="text-2xl font-semibold tracking-tight">Made for You</h2>
-								<p class="text-sm text-muted-foreground">Your personal playlists. Updated daily.</p>
-							</div>
-							<Separator class="my-4" />
-							<div class="relative">
-								<ScrollArea orientation="both">
-									<div class="flex space-x-4 pb-4">
-										{#each madeForYouAlbums as album}
-											<AlbumArtwork
-												{album}
-												class="w-[150px]"
-												aspectRatio="square"
-												width={150}
-												height={150}
-											/>
-										{/each}
-									</div>
-								</ScrollArea>
-							</div>
-						</Tabs.Content>
-						<Tabs.Content
-							value="podcasts"
-							class="h-full flex-col border-none p-0 data-[state=active]:flex"
-						>
-							<div class="flex items-center justify-between">
-								<div class="space-y-1">
-									<h2 class="text-2xl font-semibold tracking-tight">New Episodes</h2>
-									<p class="text-sm text-muted-foreground">
-										Your favorite podcasts. Updated daily.
-									</p>
-								</div>
-							</div>
-							<Separator class="my-4" />
-							<!--<PodcastEmptyPlaceholder />-->
-						</Tabs.Content>
-					</Tabs.Root>
-				</div>
+					</article>
+				{/each}
 			</div>
 		</div>
 	</div>

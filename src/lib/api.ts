@@ -1,5 +1,17 @@
 const library = `https://raw.githubusercontent.com/errata-ai/library/refs/heads/main/library.json`;
 
+export const getOGInfo = async (url: string) => {
+    try {
+        const resp = await fetch(`https://vale.sh/.netlify/functions/preview?url=${url}`);
+        if (!resp.ok) {
+            return { 'serverError': await resp.text() };
+        }
+        return await resp.json();
+    } catch (err) {
+        return { 'serverError': err };
+    }
+}
+
 export const getLibrary = async () => {
     try {
         const resp = await fetch(library);
