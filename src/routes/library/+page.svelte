@@ -19,6 +19,7 @@
 
 	onMount(() => {
 		const { autocomplete } = window['@algolia/autocomplete-js'];
+
 		autocomplete({
 			container: '#autocomplete',
 			placeholder: 'Search topics or keywords',
@@ -39,30 +40,23 @@
 								},
 								templates: {
 									noResults({ html }) {
-										return html`<div class="p-0 text-muted">
+										return html`<div class="prose dark:prose-invert">
 											<h3 class="mt-0">No results found.</h3>
-											<p>
-												Try adjusting your search with a
-												<a
-													href="https://github.com/errata-ai/library/blob/main/README.md#searching"
-													target="_blank"
-													>query string</a
-												>:
-											</p>
+											<p>Try adjusting your search with a query string:</p>
 											<ul>
 												<li class="pb-1 pt-1">
-													Faceted search: <i>date:>2021</i> or <i>author:jdkato</i>
+													Faceted search: <code>date:>2021</code> or <code>author:jdkato</code>
 												</li>
-												<li class="pb-1 pt-1">Fuzzy search: <i>term~1</i> or <i>term~2</i></li>
-												<li class="pb-1 pt-1">Boosted search: <i>text:neovim title:neovim^5</i></li>
-												<li class="pb-1 pt-1">Regex search: <i>author:/(jdkato|another)/</i></li>
+												<li class="pb-1 pt-1">
+													Fuzzy search: <code>term~1</code> or <code>term~2</code>
+												</li>
+												<li class="pb-1 pt-1">
+													Boosted search: <code>text:neovim title:neovim^5</code>
+												</li>
+												<li class="pb-1 pt-1">
+													Regex search: <code>author:/(jdkato|another)/</code>
+												</li>
 											</ul>
-											<p>
-												If you're still having trouble, feel free to ask a
-												<a href="https://github.com/errata-ai/vale/discussions" target="_blank"
-													>question on GitHub</a
-												>.
-											</p>
 										</div>`;
 									},
 									item({ item, html, createElement }) {
@@ -99,10 +93,6 @@
 		});
 	});
 </script>
-
-<svelte:head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
-</svelte:head>
 
 <div class="bg-secondary py-6">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -145,7 +135,7 @@
 <div class="py-12">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h3 class="text-balance text-4xl font-semibold tracking-tight sm:text-4xl">Media Library</h3>
+			<!--<h3 class="text-balance text-4xl font-semibold tracking-tight sm:text-4xl">Media Library</h3>-->
 			<p class="mt-2 text-lg/8 text-muted-foreground">
 				The Media library is a collection of Vale-related resources to help you learn more about how
 				how others are using Vale.
@@ -195,3 +185,5 @@
 		</div>
 	</div>
 </div>
+
+<sytle> </sytle>
