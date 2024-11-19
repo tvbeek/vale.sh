@@ -102,7 +102,7 @@ BasedOnStyles = Vale, MyStyle
 Both `accept.txt` and `reject.txt` are plain-text files that take one
 entry per line:
 
-```plaintext
+```regex
 first
 [pP]y.*\b
 third
@@ -132,7 +132,7 @@ result in errors. There are two ways around this.
 First, you can indicate that a given entry should be case-insensitive by
 providing an appropriate regular expression:
 
-```plaintext
+```regex
 (?i)MongoDB
 [Oo]bservability
 ```

@@ -18,6 +18,10 @@ const highlighter = await createHighlighter({
         'dockerfile',
         'console',
         'rust',
+        'go',
+        'coffeescript',
+        'regex',
+        'regexp',
     ]
 });
 
