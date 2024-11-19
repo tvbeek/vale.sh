@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Rocket from 'svelte-radix/Rocket.svelte';
+	import Code from 'svelte-radix/Code.svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Popover from '$lib/components/ui/popover';
 	import { onMount } from 'svelte';
@@ -64,25 +65,23 @@
 										const sample = createElement('p', {
 											dangerouslySetInnerHTML: { __html: item.Fragment }
 										});
-										return html`<div class="card text-muted">
-											<div class="card-body">
-												<h5 class="card-title mt-0">${parsed.title}</h5>
-												<p class="card-text pt-2"><small>${sample}</small></p>
-												<a href="${parsed.url}" class="stretched-link" target="_blank"></a>
-											</div>
-											<div class="card-footer">
-												<small class="text-muted">
-													<span class="badge rounded-pill result-tag bg-secondary"
-														><i class="fas fa-calendar"></i> ${parsed.year}</span
-													>
-													<span class="badge rounded-pill result-tag bg-secondary"
-														><i class="fas fa-user"></i> ${parsed.author}</span
-													>
-													<span class="badge rounded-pill result-tag bg-secondary"
-														><i class="fas fa-tag"></i> ${parsed.type}</span
-													>
-												</small>
-											</div>
+										return html`<div class="prose w-full rounded-lg p-6 dark:prose-invert">
+											<a class="no-underline" href="${parsed.url}" target="_blank">
+												<h5 class="font-bold tracking-tight underline">${parsed.title}</h5>
+												<p class="un text-sm text-muted-foreground">${sample}</p>
+												<span
+													class="mr-2 inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+													><i class="fa-solid fa-tag mr-1"></i> Type: ${parsed.type}</span
+												>
+												<span
+													class="mr-2 inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+													><i class="fa-solid fa-calendar-days mr-1"></i> Year: ${parsed.year}</span
+												>
+												<span
+													class="mr-2 inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+													><i class="fa-solid fa-person mr-1"></i> Author: ${parsed.author}</span
+												>
+											</a>
 										</div>`;
 									}
 								}
@@ -93,6 +92,16 @@
 		});
 	});
 </script>
+
+<svelte:head>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+		integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+		crossorigin="anonymous"
+		referrerpolicy="no-referrer"
+	/>
+</svelte:head>
 
 <div class="bg-secondary py-6">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
