@@ -12,21 +12,25 @@ export const docsConfig: DocsConfig = {
             href: "/docs",
         },
         {
-            title: "Vale Studio",
+            title: "Studio",
             href: "https://studio.vale.sh",
             external: true,
         },
         {
-            title: "Config Generator",
+            title: "Generator",
             href: "/generator",
         },
         {
-            title: "Rule Explorer",
+            title: "Explorer",
             href: "/explorer",
         },
         {
-            title: "Package Hub",
-            href: "/hub",
+            title: "Library",
+            href: "/library",
+        },
+        {
+            title: "Sponsor ❤️",
+            href: "/sponsor",
         },
     ],
     sidebarNav: [
@@ -81,16 +85,6 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Templates",
                     href: "/docs/templates",
-                    items: [],
-                },
-                {
-                    title: "Media",
-                    href: "/docs/media",
-                    items: [],
-                },
-                {
-                    title: "Support ❤️",
-                    href: "/docs/support",
                     items: [],
                 },
                 {

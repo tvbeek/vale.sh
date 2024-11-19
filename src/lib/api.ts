@@ -1,3 +1,17 @@
+const library = `https://raw.githubusercontent.com/errata-ai/library/refs/heads/main/library.json`;
+
+export const getLibrary = async () => {
+    try {
+        const resp = await fetch(library);
+        if (!resp.ok) {
+            return { 'serverError': await resp.text() };
+        }
+        return await resp.json();
+    } catch (err) {
+        return { 'serverError': err };
+    }
+}
+
 export const getAPI =
     () => {
         if (import.meta.env.MODE === 'development') {

@@ -10,6 +10,6 @@
 		href="/docs/support"
 		class="inline-flex items-center font-semibold underline underline-offset-2"
 	>
-		supporting the project
+		sponsoring the project
 	</a>!
 </p>
