@@ -87,16 +87,6 @@ export const docsConfig: DocsConfig = {
                     href: "/docs/templates",
                     items: [],
                 },
-                {
-                    title: "FAQ",
-                    href: "/docs/faq",
-                    items: [],
-                },
-                {
-                    title: "Glossary",
-                    href: "/docs/glossary",
-                    items: [],
-                },
             ],
         },
         {
